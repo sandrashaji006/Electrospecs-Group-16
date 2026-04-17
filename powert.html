@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Power Transformer</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial;
+    background: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Grid */
+.power-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Card */
+.power-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.power-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image */
+.power-card img {
+    width: 100px;
+}
+
+/* Details box */
+#details {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    display: none;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.35s ease;
+}
+
+/* when active */
+#details.show {
+    display: block;
+    transform: scale(1);
+    opacity: 1;
+}
+</style>
+
+<script>
+function showpower(type) {
+
+    let title = document.getElementById("title");
+    let info = document.getElementById("info");
+    let box = document.getElementById("details");
+    
+
+    if (type === "step up") {
+        title.innerHTML = "Step-Up Power Transformer";
+        info.innerHTML = "Increases voltage from the generator side to a very high level for efficient long-distance power transmission. It reduces current and minimizes transmission losses in power grids.";
+    }
+
+    else if (type === "step down") {
+        title.innerHTML = "Step-Down Power Transformer";
+        info.innerHTML = "Decreases high transmission voltage to lower, usable levels for homes, industries, and commercial areas. It is widely used in distribution networks.";
+    }
+
+    else if (type === "distribution") {
+        title.innerHTML = "Distribution Transformer";
+        info.innerHTML = "A type of step-down transformer used in the final stage of power distribution. It supplies safe voltage (like 230V or 110V) to residential and small commercial users.";
+    }
+    else if (type === "transmission") {
+        title.innerHTML = "Transmission Transformer";
+        info.innerHTML = "Used in power plants and substations for stepping up or stepping down very high voltages (like 132kV, 220kV, 400kV). It is designed for high efficiency and continuous operation.";
+    }
+    else if (type === "generator") {
+        title.innerHTML = "Generator Transformer";
+        info.innerHTML = "Connected directly to power generators to step up generated voltage for transmission. It handles high power levels and ensures stable grid integration.";
+    }
+    else if (type === "unitized") {
+        title.innerHTML = "Unitized Power Transformer";
+        info.innerHTML = "Designed as a compact unit combining multiple functions for space-saving in substations. It is used in modern power systems where efficiency and compact design are important.";
+    }
+       box.classList.remove("show");
+ 
+    box.style.display = "block";
+
+// trigger animation
+setTimeout(() => {
+    box.classList.add("show");
+}, 10);
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+     
+        <div class="header-container">
+            
+            <!-- Logo + Name -->
+            <img src="logo.jpeg" alt="Logo" class="logo">
+            </div>
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+
+</header>
+
+<h2>Power Transformers</h2>
+
+<!-- power inductor GRID -->
+<div class="power-container">
+
+    <div class="power-card" onclick="showpower('step up')">
+        <img src="stepupp.jpeg">
+        <p>STEP UP POWER TRANSFORMER</p>
+    </div>
+
+    <div class="power-card" onclick="showpower('step down')">
+        <img src="stepdownp.jpeg">
+        <p>STEP DOWN POWER TRANSFORMER</p>
+    </div>
+
+    <div class="power-card" onclick="showpower('distribution')">
+        <img src="distribution.jpeg">
+        <p>DISTRIBUTION TRANSFORMER</p>
+    </div>
+
+    <div class="power-card" onclick="showpower('transmission')">
+        <img src="transmission.jpeg">
+        <p>TRANSMISSION TRANSFORMER</p>
+    </div>
+    <div class="power-card" onclick="showpower('generator')">
+        <img src="generator.jpeg">
+        <p>GENERATOR TRANSFORMER</p>
+    </div>
+    <div class="power-card" onclick="showpower('unitized')">
+        <img src="unitized.jpeg">
+        <p>UNITIZED POWER TRANSFORMER</p>
+    </div>  
+
+ </div>    
+<!-- DETAILS -->
+<div id="details">
+    <h2 id="title"></h2>
+    <p id="info"></p>
+</div>
+
+<br>
+<br><br>
+<br>
+<br><br>
+<a href="transformers.html" class="button">⬅ Back to Transformers</a>
+
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+        <p>Phone:📞7837674687,636868276487</p>
+        <p>Email:📧emaleendgjj.com,sandradgfgb.com</p>
+    </div>
+</footer>
+</body>
+</html>

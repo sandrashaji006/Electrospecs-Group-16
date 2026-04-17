@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iron Core Inductor</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial;
+    background: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Grid */
+.ironcore-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Card */
+.ironcore-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.ironcore-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image */
+.ironcore-card img {
+    width: 100px;
+}
+
+/* Details box */
+#details {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    display: none;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.35s ease;
+}
+
+/* when active */
+#details.show {
+    display: block;
+    transform: scale(1);
+    opacity: 1;
+}
+</style>
+
+<script>
+function showironcore(type) {
+
+    let title = document.getElementById("title");
+    let info = document.getElementById("info");
+    let box = document.getElementById("details");
+    
+
+    if (type === "choke") {
+        title.innerHTML = "Choke Inductors";
+        info.innerHTML = "These are used to block or smooth AC ripple while allowing DC to pass. They have high inductance and are commonly used in power supplies, filtering circuits, and noise suppression applications.";
+    }
+
+    else if (type === "power") {
+        title.innerHTML = "Power Inductors";
+        info.innerHTML = "These inductors are designed to handle high current and store energy in magnetic form. They are used in transformers, SMPS circuits, and power conversion systems due to their high efficiency and strong magnetic field.";
+    }
+
+    else if (type === "filter") {
+        title.innerHTML = "Filter Inductors";
+        info.innerHTML = "These are used to remove unwanted noise and ripple from electrical signals. Iron cores provide high inductance, making them suitable for audio systems, rectifier circuits, and power filtering applications.";
+    }
+    else if (type === "trans") {
+        title.innerHTML = "Transformer-Type Inductors";
+        info.innerHTML = "These inductors are used in transformers where energy is transferred between windings using an iron core for strong magnetic coupling. They are widely used in voltage step-up and step-down applications.";
+    }
+   
+       box.classList.remove("show");
+ 
+    box.style.display = "block";
+
+// trigger animation
+setTimeout(() => {
+    box.classList.add("show");
+}, 10);
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+     
+        <div class="header-container">
+            
+            <!-- Logo + Name -->
+            <img src="logo.jpeg" alt="Logo" class="logo">
+            </div>
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+
+</header>
+
+<h2>Iron Core Inductor</h2>
+
+<!-- ironcoreinductor GRID -->
+<div class="ironcore-container">
+
+    <div class="ironcore-card" onclick="showironcore('choke')">
+        <img src="choke.jpeg">
+        <p>CHOKE INDUCTOR</p>
+    </div>
+
+    <div class="ironcore-card" onclick="showironcore('power')">
+        <img src="power.jpeg">
+        <p>POWER INDUCTOR</p>
+    </div>
+
+    <div class="ironcore-card" onclick="showironcore('filter')">
+        <img src="filter.jpeg">
+        <p>FILTER INDUCTOR</p>
+    </div>
+
+    <div class="ironcore-card" onclick="showironcore('trans')">
+        <img src="transtype.jpeg">
+        <p>TRANSFORMER TYPE INDUCTOR</p>
+    </div>
+
+  
+
+ </div>    
+<!-- DETAILS -->
+<div id="details">
+    <h2 id="title"></h2>
+    <p id="info"></p>
+</div>
+
+<br>
+<br><br>
+<br>
+<br><br>
+<a href="inductors.html" class="button">⬅ Back to Inductors</a>
+
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+        <p>Phone:📞7837674687,636868276487</p>
+        <p>Email:📧emaleendgjj.com,sandradgfgb.com</p>
+    </div>
+</footer>
+</body>
+</html>
