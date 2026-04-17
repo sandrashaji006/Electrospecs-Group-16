@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metal Oxide Film Resistor</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial;
+    background: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Grid */
+.metaloxidefilm-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Card */
+.metaloxidefilm-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.metaloxidefilm-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image */
+.metaloxidefilm-card img {
+    width: 100px;
+}
+
+/* Details box */
+#details {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    display: none;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.35s ease;
+}
+
+/* when active */
+#details.show {
+    display: block;
+    transform: scale(1);
+    opacity: 1;
+}
+</style>
+
+<script>
+function showmetaloxidefilm(type) {
+
+    let title = document.getElementById("title");
+    let info = document.getElementById("info");
+    let box = document.getElementById("details");
+    
+
+    if (type === "general purpose") {
+        title.innerHTML = "General Purpose Metal Oxide Film Resistors";
+        info.innerHTML = "These are standard metal oxide resistors made by coating a ceramic core with tin oxide. They offer resistance range from 1Ω to 10MΩ, power ratings from 0.25W to 2W, and tolerances of ±1% to ±5%. They provide good stability, low noise, and are commonly used in general electronic circuits, power supplies, and signal processing applications.";
+    }
+
+    else if (type === "flameproof") {
+        title.innerHTML = "Flameproof Metal Oxide Film Resistor";
+        info.innerHTML = "Flameproof types are specially designed with a protective coating that prevents fire or damage under overload conditions. They typically handle power ratings from 0.5W to 5W, resistance range from 1Ω to 1MΩ, and tolerances of ±2% to ±10%. These resistors safely fail open under extreme conditions and are widely used in TV circuits, adapters, and safety-critical electronics. ";
+    }
+
+    else if (type === "high surge") {
+        title.innerHTML = "High Surge Metal Oxide Film Resistor";
+        info.innerHTML = "These resistors are designed to withstand sudden voltage spikes and current surges. They usually support power ratings from 1W to 5W, resistance range from 10Ω to 1MΩ, and tolerances of ±1% to ±5%. They are commonly used in power supplies, inrush current limiting, and industrial control systems. ";
+    }
+
+    else if (type === "high voltage") {
+        title.innerHTML = "High Voltage Metal Oxide Film Resistor";
+        info.innerHTML = "High-voltage types are built with thicker coatings and longer bodies to handle large electrical stresses. They offer resistance values from 100Ω to 100MΩ, power ratings up to 3W or more, and operating voltages up to several kilovolts (kV range). These are used in CRT circuits, HV power supplies, and medical or scientific equipment.";
+    }
+    else if (type === "precision") {
+        title.innerHTML = "Precision Metal Oxide Film Resistor";
+        info.innerHTML = "Precision versions are designed for high accuracy and long-term stability. They provide very low tolerances (±0.1% to ±1%), low temperature coefficient (±25 ppm/°C or better), and resistance range from 10Ω to 1MΩ. They are used in measurement instruments, calibration systems, and precision analog circuits. ";
+    }
+
+   box.classList.remove("show");
+ 
+    box.style.display = "block";
+
+// trigger animation
+setTimeout(() => {
+    box.classList.add("show");
+}, 10);
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+     
+        <div class="header-container">
+            
+            <!-- Logo + Name -->
+            <img src="logo.jpeg" alt="Logo" class="logo">
+            </div>
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+
+</header>
+
+<h2>Metal Oxide Film Resistor</h2>
+
+<!-- Metal Oxide Film GRID -->
+<div class="metaloxidefilm-container">
+
+    <div class="metaloxidefilm-card" onclick="showmetaloxidefilm('general purpose')">
+        <img src="generalmo.jpeg">
+        <p>GENERAL PURPOSE METAL OXIDE FILM RESISTOR</p>
+    </div>
+
+    <div class="metaloxidefilm-card" onclick="showmetaloxidefilm('flameproof')">
+        <img src="flameproofmo.jpeg">
+        <p>FLAMEPROOF METAL OXIDE FILM RESISTOR</p>
+    </div>
+
+    <div class="metaloxidefilm-card" onclick="showmetaloxidefilm('high surge')">
+        <img src="highsurgemo.jpeg">
+        <p>HIGH SURGE METAL OXIDE FILM RESISTOR</p>
+    </div>
+
+    <div class="metaloxidefilm-card" onclick="showmetaloxidefilm('high voltage')">
+        <img src="highvoltagemo.jpeg">
+        <p>HIGH VOLTAGE METAL OXIDE RESISTOR</p>
+    </div>
+
+    <div class="metaloxidefilm-card" onclick="showmetaloxidefilm('precision')">
+        <img src="precisionmo.jpeg">
+        <p>PRECISION METAL OXIDE FILM RESISTOR</p>
+    </div>
+
+
+ </div>    
+<!-- DETAILS -->
+<div id="details">
+    <h2 id="title"></h2>
+    <p id="info"></p>
+</div>
+
+<br>
+<br><br>
+<br>
+<br><br>
+<a href="resistors.html" class="button">⬅ Back to Resistors</a>
+
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+        <p>Phone:📞7837674687,636868276487</p>
+        <p>Email:📧emaleendgjj.com,sandradgfgb.com</p>
+    </div>
+</footer>
+</body>
+</html>

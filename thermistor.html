@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thermistor Resistor</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial;
+    background: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Grid */
+.thermistor-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Card */
+.thermistor-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.thermistor-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image */
+.thermistor-card img {
+    width: 100px;
+}
+
+/* Details box */
+#details {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    display: none;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.35s ease;
+}
+
+/* when active */
+#details.show {
+    display: block;
+    transform: scale(1);
+    opacity: 1;
+}
+</style>
+
+<script>
+function showthermistor(type) {
+
+    let title = document.getElementById("title");
+    let info = document.getElementById("info");
+    let box = document.getElementById("details");
+    
+
+    if (type === "ntc") {
+        title.innerHTML = "NTC Thermistor (Negative Temperature Coefficient)";
+        info.innerHTML = "An NTC thermistor decreases its resistance as temperature increases. It typically offers resistance values from 10Ω to 1MΩ (at 25°C), a high sensitivity to temperature changes, and an operating range of about −55°C to 200°C depending on the model. NTC thermistors are widely used in temperature sensing, battery protection circuits, inrush current limiting, and digital thermometers due to their fast response and high accuracy.";
+    }
+
+    else if (type === "ptc") {
+        title.innerHTML = "PTC Thermistor (Positive Temperature Coefficient)";
+        info.innerHTML = "A PTC thermistor increases its resistance as temperature increases. It usually has low resistance at room temperature (a few ohms to kilo-ohms) and sharply increases resistance after a threshold temperature (called the Curie point). It operates typically up to 125°C to 150°C or higher, depending on design. PTC thermistors are used for overcurrent protection, self-resetting fuses, motor protection, and degaussing circuits in CRTs.";
+    }
+
+    else if (type === "switching") {
+        title.innerHTML = "Switching PTC Thermistor";
+        info.innerHTML = "A switching PTC thermistor shows a very sharp rise in resistance at a specific temperature. It behaves almost like a switch, changing from low resistance to very high resistance quickly at its trigger temperature. These are commonly used in motor starting circuits, heaters, and self-regulating heating elements where automatic current control is needed.";
+    }
+
+    else if (type === "linear") {
+        title.innerHTML = "Linear PTC Thermistor";
+        info.innerHTML = "A linear PTC thermistor increases resistance gradually and predictably with temperature. Unlike switching types, the change is smooth and controlled, making it suitable for temperature measurement and compensation circuits. They are used in industrial sensors and precision temperature monitoring systems.";
+    }
+
+   box.classList.remove("show");
+ 
+    box.style.display = "block";
+
+// trigger animation
+setTimeout(() => {
+    box.classList.add("show");
+}, 10);
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+     
+        <div class="header-container">
+            
+            <!-- Logo + Name -->
+            <img src="logo.jpeg" alt="Logo" class="logo">
+            </div>
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+
+</header>
+
+<h2>Thermistors</h2>
+
+<!-- thermistor GRID -->
+<div class="thermistor-container">
+
+    <div class="thermistor-card" onclick="showthermistor('ntc')">
+        <img src="ntc.jpeg">
+        <p>NTC THERMISTOR(NEGATIVE TEMPERATURE COEFFICIENT)</p>
+    </div>
+
+    <div class="thermistor-card" onclick="showthermistor('ptc')">
+        <img src="ptc.jpeg">
+        <p>PTC THERMISTOR(POSITIVE TEMPERATURE COEFFICIENT)</p>
+    </div>
+
+    <div class="thermistor-card" onclick="showthermistor('switching')">
+        <img src="switching.jpeg">
+        <p>SWITCHING PTC THERMISTOR</p>
+    </div>
+
+    <div class="thermistor-card" onclick="showthermistor('linear')">
+        <img src="linear.jpeg">
+        <p>LINEAR PTC THERMISTOR</p>
+    </div>
+
+
+
+
+ </div>    
+<!-- DETAILS -->
+<div id="details">
+    <h2 id="title"></h2>
+    <p id="info"></p>
+</div>
+
+<br>
+<br><br>
+<br>
+<br><br>
+<a href="resistors.html" class="button">⬅ Back to Resistors</a>
+
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+        <p>Phone:📞7837674687,636868276487</p>
+        <p>Email:📧emaleendgjj.com,sandradgfgb.com</p>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Potentiometer</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial;
+    background: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Grid */
+.potentiometer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Card */
+.potentiometer-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.potentiometer-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image */
+.potentiometer-card img {
+    width: 100px;
+}
+
+/* Details box */
+#details {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    display: none;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.35s ease;
+}
+
+/* when active */
+#details.show {
+    display: block;
+    transform: scale(1);
+    opacity: 1;
+}
+</style>
+
+<script>
+function showpotentiometer(type) {
+
+    let title = document.getElementById("title");
+    let info = document.getElementById("info");
+    let box = document.getElementById("details");
+    
+
+    if (type === "rotary") {
+        title.innerHTML = "Rotary Potentiometer";
+        info.innerHTML = "A rotary potentiometer changes resistance by rotating a knob or shaft. It typically offers resistance values from 1 kΩ to 1 MΩ, linear or logarithmic taper options, and power ratings around 0.1W to 2W. It is widely used in volume controls, tuning circuits, and adjustment controls in electronic devices due to its smooth and precise rotational control.";
+    }
+
+    else if (type === "linear") {
+        title.innerHTML = "Linear (Slide) Potentiometer";
+        info.innerHTML = "A linear potentiometer changes resistance by moving a slider in a straight line. It usually provides resistance ranges from 1 kΩ to 500 kΩ, travel lengths from 30 mm to 100 mm or more, and power ratings around 0.1W to 1W. It is commonly used in audio mixers, lighting control panels, and laboratory instruments where visual position feedback is important. ";
+    }
+
+    else if (type === "digital") {
+        title.innerHTML = "Digital Potentiometer (Digital Pot)";
+        info.innerHTML = "A digital potentiometer is an electronic component that adjusts resistance using digital signals instead of mechanical movement. It offers resistance values typically from 1 kΩ to 100 kΩ, resolution up to 8-bit, 10-bit, or 12-bit, and low power consumption (in mW range). It is used in microcontroller-based systems, automatic calibration circuits, and programmable gain amplifiers. ";
+    }
+
+    else if (type === "trimmer") {
+        title.innerHTML = "Trimmer Potentiometer (Preset Pot)";
+        info.innerHTML = "A trimmer potentiometer is a small adjustable potentiometer designed for occasional tuning or calibration. It usually provides resistance ranges from 100 Ω to 1 MΩ, low power ratings (0.1W to 0.5W), and is adjusted using a screwdriver. It is widely used in PCB calibration, sensor adjustment, and circuit fine-tuning applications.";
+    }
+    else if (type === "multi turn") {
+        title.innerHTML = "Multi-Turn Potentiometer";
+        info.innerHTML = "A multi-turn potentiometer allows very fine adjustment using multiple turns of a screw mechanism. It offers high precision resistance adjustment, typically 5 to 25 turns for full range, and high accuracy (±0.1% to ±5%). It is used in laboratory equipment, precision calibration devices, and industrial control systems where fine control is required. ";
+    }
+
+   box.classList.remove("show");
+ 
+    box.style.display = "block";
+
+// trigger animation
+setTimeout(() => {
+    box.classList.add("show");
+}, 10);
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+     
+        <div class="header-container">
+            
+            <!-- Logo + Name -->
+            <img src="logo.jpeg" alt="Logo" class="logo">
+            </div>
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+
+</header>
+
+<h2>Potentiometers</h2>
+
+<!-- potentiometer GRID -->
+<div class="potentiometer-container">
+
+    <div class="potentiometer-card" onclick="showpotentiometer('rotary')">
+        <img src="rotaryp.jpeg">
+        <p>ROTARY POTENTIOMETER</p>
+    </div>
+
+    <div class="potentiometer-card" onclick="showpotentiometer('linear')">
+        <img src="linearp.jpeg">
+        <p>LINEAR(SLIDE) POTENTIOMETER</p>
+    </div>
+
+    <div class="potentiometer-card" onclick="showpotentiometer('digital')">
+        <img src="digitalp.jpeg">
+        <p>DIGITAL POTENTIOMETER</p>
+    </div>
+
+    <div class="potentiometer-card" onclick="showpotentiometer('trimmer')">
+        <img src="trimmerp.jpeg">
+        <p>TRIMMER POTENTIOMETER</p>
+    </div>
+
+    <div class="potentiometer-card" onclick="showpotentiometer('multi turn')">
+        <img src="multiturnp.jpeg">
+        <p>MULTI-TURN POTENTIOMETER</p>
+    </div>
+
+
+ </div>    
+<!-- DETAILS -->
+<div id="details">
+    <h2 id="title"></h2>
+    <p id="info"></p>
+</div>
+
+<br>
+<br><br>
+<br>
+<br><br>
+<a href="resistors.html" class="button">⬅ Back to Resistors</a>
+
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+        <p>Phone:📞7837674687,636868276487</p>
+        <p>Email:📧emaleendgjj.com,sandradgfgb.com</p>
+    </div>
+</footer>
+</body>
+</html>

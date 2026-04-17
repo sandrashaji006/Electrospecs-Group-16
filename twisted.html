@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Twisted Pair Cable Types</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial;
+    background: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Grid */
+.twisted-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Card */
+.twisted-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.twisted-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image */
+.twisted-card img {
+    width: 100px;
+}
+
+/* Details box */
+#details {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    display: none;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.35s ease;
+}
+
+/* when active */
+#details.show {
+    display: block;
+    transform: scale(1);
+    opacity: 1;
+}
+</style>
+
+<script>
+function showtwisted(type) {
+
+    let title = document.getElementById("title");
+    let info = document.getElementById("info");
+    let box = document.getElementById("details");
+    
+
+    if (type === "utp") {
+        title.innerHTML = "UTP (Unshielded Twisted Pair)";
+        info.innerHTML = "No shielding, lightweight and low cost; used in LAN networks (Cat5, Cat6), but more affected by noise.";
+    }
+
+    else if (type === "stp") {
+        title.innerHTML = "STP (Shielded Twisted Pair)";
+        info.innerHTML = "Has metallic shielding to reduce electromagnetic interference; used in industrial and high-noise environments.";
+    }
+
+    else if (type === "ftp") {
+        title.innerHTML = "FTP (Foiled Twisted Pair)";
+        info.innerHTML = "Uses foil shielding around wire pairs; offers better noise protection than UTP but lighter than STP.";
+    }
+   
+       box.classList.remove("show");
+ 
+    box.style.display = "block";
+
+// trigger animation
+setTimeout(() => {
+    box.classList.add("show");
+}, 10);
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+     
+        <div class="header-container">
+            
+            <!-- Logo + Name -->
+            <img src="logo.jpeg" alt="Logo" class="logo">
+            </div>
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+
+</header>
+
+<h2>TWISTED PAIR CABLE TYPES</h2>
+
+<!-- twisted GRID -->
+<div class="twisted-container">
+
+    <div class="twisted-card" onclick="showtwisted('utp')">
+        <img src="utp.jpeg">
+        <p>UTP (UNSHIELDED TWISTED PAIR)</p>
+    </div>
+
+    <div class="twisted-card" onclick="showtwisted('stp')">
+        <img src="stp.jpeg">
+        <p>STP (SHIELDED TWISTED PAIR)</p>
+    </div>
+
+    <div class="twisted-card" onclick="showtwisted('ftp')">
+        <img src="ftp.jpeg">
+        <p>FOILED TWISTED PAIR</p>
+    </div>
+
+
+
+ </div> 
+   
+<!-- DETAILS -->
+<div id="details">
+    <h2 id="title"></h2>
+    <p id="info"></p>
+</div>
+
+<br>
+<br><br>
+<br>
+<br><br>
+<a href="connectors.html" class="button">⬅ Back to Connectors</a>
+
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+        <p>Phone:📞7837674687,636868276487</p>
+        <p>Email:📧emaleendgjj.com,sandradgfgb.com</p>
+    </div>
+</footer>
+</body>
+</html>

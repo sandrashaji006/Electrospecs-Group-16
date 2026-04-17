@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components - ElectroSpecs</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        function toggleDropdown(id) {
+            var dropdown = document.getElementById(id);
+
+            if (dropdown.style.display === "block") {
+                dropdown.style.display = "none";
+            } else {
+                dropdown.style.display = "block";
+            }
+        }
+        
+function searchComponent(event) {
+
+    if (event.key === "Enter") {
+
+        let input = document.getElementById("searchBox").value.toLowerCase().trim();
+
+        //  DIODES
+        if (input.includes("1n4007")) {
+            window.location.href = "rectifier.html#1n4007";
+        }
+        else if (input.includes("zener")) {
+            window.location.href = "zener.html";
+        }
+        else if (input.includes("led")) {
+            window.location.href = "led.html#led";
+        }
+        else if (input.includes("diode")) {
+            window.location.href = "diodes.html";
+        }
+        else if (input.includes("red")) {
+            window.location.href = "led.html#red-led-5mm";
+        }
+        else if (input.includes("green")) {
+            window.location.href = "led.html#green-led-5mm";
+        }
+        else if (input.includes("blue")) {
+            window.location.href = "led.html#blue-led-5mm";
+        }
+        else if (input.includes("white")) {
+            window.location.href = "led.html#white-led-5mm";
+        }
+        else if (input.includes("smd")) {
+            window.location.href = "led.html#smd-led-0805";
+        }
+        else if (input.includes("1n4728a")) {
+            window.location.href = "zener.html#1n4728a";
+        }
+        else if (input.includes("1n4730a")) {
+            window.location.href = "zener.html#1n4730a";
+        }
+        else if (input.includes("1n4732a")) {
+            window.location.href = "zener.html#1n4732a";
+        }
+        else if (input.includes("1n4733a")) {
+            window.location.href = "zener.html#1n4733a";
+        }
+        else if (input.includes("1n4735a")) {
+            window.location.href = "zener.html#1n4735a";
+        }
+        else if (input.includes("bzx55c3v3")) {
+            window.location.href = "zener.html#bzx55c3v3";
+        }
+        else if (input.includes("bzx55c5v1")) {
+            window.location.href = "zener.html#bzx55c5v1";
+        }
+        else if (input.includes("bzx55c12")) {
+            window.location.href = "zener.html#bzx55c12";
+        }
+        else if (input.includes("rectifier")) {
+            window.location.href = "rectifier.html";
+        }
+        else if (input.includes("by127")) {
+            window.location.href = "rectifier.html#by127";
+        }
+        else if (input.includes("1n4001")) {
+            window.location.href = "rectifier.html#1n4001";
+        }
+         else if (input.includes("1n4002")) {
+            window.location.href = "rectifier.html#1n4002";
+        }
+         else if (input.includes("1n4003")) {
+            window.location.href = "rectifier.html#1n4003";
+        }
+         else if (input.includes("1n4004")) {
+            window.location.href = "rectifier.html#1n4004";
+        }
+         else if (input.includes("1n4005")) {
+            window.location.href = "rectifier.html#1n4005";
+        }
+         else if (input.includes("1n4006")) {
+            window.location.href = "rectifier.html#1n4006";
+        }
+         else if (input.includes("1n5402")) {
+            window.location.href = "rectifier.html#1n5402";
+        }
+         else if (input.includes("1n5404")) {
+            window.location.href = "rectifier.html#1n5404";
+        }
+         else if (input.includes("1n5408")) {
+            window.location.href = "rectifier.html#1n5408";
+        }
+         else if (input.includes("schottky")) {
+            window.location.href = "schottky.html";
+        }
+         else if (input.includes("1n5817")) {
+            window.location.href = "schottky.html#1n5817";
+        }
+        else if (input.includes("1n5818")) {
+            window.location.href = "schottky.html#1n5818";
+        }
+        else if (input.includes("1n5819")) {
+            window.location.href = "schottky.html#1n5819";
+        }
+        else if (input.includes("bat54")) {
+            window.location.href = "schottky.html#bat54";
+        }
+        else if (input.includes("switching")) {
+            window.location.href = "switching.html";
+        }
+        else if (input.includes("1n4148")) {
+            window.location.href = "switching.html#1n4148";
+        }
+        else if (input.includes("1n4448")) {
+            window.location.href = "switching.html#1n4448";
+        }
+        else if (input.includes("varactor")) {
+            window.location.href = "varactor.html";
+        }
+        else if (input.includes("bb105")) {
+            window.location.href = "varactor.html#bb105";
+        }
+        else if (input.includes("bb139")) {
+            window.location.href = "varactor.html#bb139";
+        }
+        else if (input.includes("pin")) {
+            window.location.href = "pin.html";
+        }
+         else if (input.includes("ba479")) {
+            window.location.href = "pin.html#ba479";
+        }
+         else if (input.includes("tvs")) {
+            window.location.href = "tvs.html";
+        }
+        else if (input.includes("1.5ke6.8a")) {
+            window.location.href = "tvs.html#1.5ke6.8a";
+        }
+        else if (input.includes("1.5ke18a")) {
+            window.location.href = "tvs.html#1.5ke18a";
+        }
+        else if (input.includes("fast recovery")) {
+            window.location.href = "fast recovery.html";
+        }
+        else if (input.includes("uf4007")) {
+            window.location.href = "fast recovery.html#uf4007";
+        }
+        else if (input.includes("fr107")) {
+            window.location.href = "fast recovery.html#fr107";
+        }
+        else if (input.includes("transistor")) {
+            window.location.href = "transistor.html";
+        }
+
+        else if (input.includes("mosfet")) {
+            window.location.href = "mosfet.html";
+        }
+        else if (input.includes("irfz44n")) {
+            window.location.href = "mosfet.html#irfz44n";
+        }
+        else if (input.includes("2n7000")) {
+            window.location.href = "mosfet.html#2n7000";
+        }
+        else if (input.includes("irf540n")) {
+            window.location.href = "mosfet.html#irf540n";
+        }
+        else if (input.includes("bss138")) {
+            window.location.href = "mosfet.html#bss138";
+        }
+        else if (input.includes("irf9540n")) {
+            window.location.href = "mosfet.html#irf9540n";
+        }
+        else if (input.includes("jfet")) {
+            window.location.href = "jfet.html";
+        }
+        else if (input.includes("2n5457")) {
+            window.location.href = "jfet.html#2n5457";
+        }
+        else if (input.includes("bf245")) {
+            window.location.href = "jfet.html#bf245";
+        }
+        else if (input.includes("j111")) {
+            window.location.href = "jfet.html#j111";
+        }
+        else if (input.includes("pnp")) {
+            window.location.href = "pnp.html";
+        }
+        else if (input.includes("2n3906")) {
+            window.location.href = "pnp.html#2n3906";
+        }
+        else if (input.includes("bc558")) {
+            window.location.href = "pnp.html#bc558";
+        }
+        else if (input.includes("bc327")) {
+            window.location.href = "pnp.html#bc327";
+        }
+        else if (input.includes("bd140")) {
+            window.location.href = "pnp.html#bd140";
+        }
+        else if (input.includes("npn")) {
+            window.location.href = "npn.html";
+        }
+        else if (input.includes("2n2222")) {
+            window.location.href = "npn.html#2n2222";
+        }
+        else if (input.includes("bc547")) {
+            window.location.href = "npn.html#bc547";
+        }
+        else if (input.includes("2n3904")) {
+            window.location.href = "npn.html#2n3904";
+        }
+        else if (input.includes("tip31c")) {
+            window.location.href = "npn.html#tip31c";
+        }
+        else if (input.includes("ic")) {
+            window.location.href = "ics.html";
+        }
+        else if (input.includes("analog")) {
+            window.location.href = "analog.html";
+        }
+        else if (input.includes("digital")) {
+            window.location.href = "digital.html";
+        }
+        else if (input.includes("mixed")) {
+            window.location.href = "mixed.html";
+        }
+        else if (input.includes("lm741")) {
+            window.location.href = "analog.html#lm741";
+        }
+        else if (input.includes("555")) {
+            window.location.href = "analog.html#555";
+        }
+        else if (input.includes("lm317")) {
+            window.location.href = "analog.html#lm317";
+        }
+        else if (input.includes("cd4046")) {
+            window.location.href = "analog.html#cd4046";
+        }
+        else if (input.includes("cd4066")) {
+            window.location.href = "analog.html#cd4066";
+        }
+        else if (input.includes("74hc00")) {
+            window.location.href = "digital.html#74hc00";
+        }
+        else if (input.includes("74hc08")) {
+            window.location.href = "digital.html#74hc08";
+        }
+        else if (input.includes("74hc04")) {
+            window.location.href = "digital.html#74hc04";
+        }
+        else if (input.includes("74hc32")) {
+            window.location.href = "digital.html#74hc32";
+        }
+        else if (input.includes("atmega328p")) {
+            window.location.href = "digital.html#atmega328p";
+        }
+        else if (input.includes("rp2040")) {
+            window.location.href = "digital.html#rp2040";
+        }
+        else if (input.includes("adc0804")) {
+            window.location.href = "mixed.html#adc0804";
+        }
+        else if (input.includes("mcp3008")) {
+            window.location.href = "mixed.html#mcp3008";
+        }
+        else if (input.includes("dac0808")) {
+            window.location.href = "mixed.html#dac0808";
+        }
+        else if (input.includes("msp430")) {
+            window.location.href = "mixed.html#msp430";
+        }
+        else if (input.includes("snapdragonx65")) {
+            window.location.href = "mixed.html#snapdragonx65";
+        }
+        else if (input.includes("max232")) {
+            window.location.href = "mixed.html#max232";
+        }
+        else if (input.includes("temperature")) {
+            window.location.href = "temperature.html";
+        }
+        else if (input.includes("light")) {
+            window.location.href = "light.html";
+        }
+        else if (input.includes("pressure")) {
+            window.location.href = "pressure.html";
+        }
+        else if (input.includes("proximity")) {
+            window.location.href = "proximity.html";
+        }
+        else if (input.includes("motion")) {
+            window.location.href = "motion.html";
+        }
+        else if (input.includes("humidity")) {
+            window.location.href = "humidity.html";
+        }
+        else if (input.includes("gas")) {
+            window.location.href = "gas.html";
+        }
+        else if (input.includes("mq-2")) {
+            window.location.href = "gas.html#mq-2";
+        }
+        else if (input.includes("mq-3")) {
+            window.location.href = "gas.html#mq-3";
+        }
+        else if (input.includes("mq-7")) {
+            window.location.href = "gas.html#mq-7";
+        }
+        else if (input.includes("mq-8")) {
+            window.location.href = "gas.html#mq-8";
+        }
+        else if (input.includes("mq-135")) {
+            window.location.href = "gas.html#mq-135";
+        }
+        else if (input.includes("lm35")) {
+            window.location.href = "temperature.html#lm35";
+        }
+        else if (input.includes("tmp117")) {
+            window.location.href = "temperature.html#tmp117";
+        }
+        else if (input.includes("dht22")) {
+            window.location.href = "temperature.html#dht22";
+        }
+        else if (input.includes("ds18b20")) {
+            window.location.href = "temperature.html#ds18b20";
+        }
+        else if (input.includes("max6675")) {
+            window.location.href = "temperature.html#max6675";
+        }
+        else if (input.includes("ldr")) {
+            window.location.href = "light.html#ldr";
+        }
+        else if (input.includes("bh1750")) {
+            window.location.href = "light.html#bh1750";
+        }
+        else if (input.includes("tcs3200")) {
+            window.location.href = "light.html#tcs3200";
+        }
+        else if (input.includes("tsl2561")) {
+            window.location.href = "light.html#tsl2561";
+        }
+        else if (input.includes("bmp280")) {
+            window.location.href = "pressure.html#bmp280";
+        }
+        else if (input.includes("hk1100c")) {
+            window.location.href = "pressure.html#hk1100c";
+        }
+        else if (input.includes("mpx7002")) {
+            window.location.href = "pressure.html#mpx7002";
+        }
+        else if (input.includes("fsr402")) {
+            window.location.href = "pressure.html#fsr402";
+        }
+        else if (input.includes("lj12a3")) {
+            window.location.href = "proximity.html#lj12a3";
+        }
+        else if (input.includes("ljc18a3")) {
+            window.location.href = "proximity.html#ljc18a3";
+        }
+        else if (input.includes("tcrt5000")) {
+            window.location.href = "proximity.html#tcrt5000";
+        }
+        else if (input.includes("us1881")) {
+            window.location.href = "proximity.html#us1881";
+        }
+        else if (input.includes("hc-sr04")) {
+            window.location.href = "motion.html#hc-sr04";
+        }
+        else if (input.includes("rcwl-0516")) {
+            window.location.href = "motion.html#rcwl-0516";
+        }
+        else if (input.includes("aqarafp2")) {
+            window.location.href = "motion.html#aqarafp2";
+        }
+        else if (input.includes("vl53l1x")) {
+            window.location.href = "motion.html#vl53l1x";
+        }
+        else if (input.includes("dht11")) {
+            window.location.href = "humidity.html#dht11";
+        }
+        else if (input.includes("bme280")) {
+            window.location.href = "humidity.html#bme280";
+        }
+        else if (input.includes("sht40")) {
+            window.location.href = "humidity.html#sht40";
+        }
+        else if (input.includes("sht31")) {
+            window.location.href = "humidity.html#sht31";
+        }
+        else if (input.includes("carbonfilm")) {
+            window.location.href = "carbon film resistor.html";
+        }
+        else if (input.includes("metalfilm")) {
+            window.location.href = "metal film.html";
+        }
+        else if (input.includes("wirewound")) {
+            window.location.href = "wirewound.html";
+        }        else if (input.includes("metaloxidefilm")) {
+            window.location.href = "metal oxide film.html";
+        }
+        else if (input.includes("smd")) {
+            window.location.href = "surface mound.html";
+        }
+        else if (input.includes("potentiometer")) {
+            window.location.href = "potentiometer.html";
+        }
+        else if (input.includes("rheostat")) {
+            window.location.href = "rheostat.html";
+        }
+        else if (input.includes("trimmer")) {
+            window.location.href = "trimmer.html";
+        }
+        else if (input.includes("thermistor")) {
+            window.location.href = "thermistor.html";
+        }
+        else if (input.includes("ldr")) {
+            window.location.href = "ldr.html";
+        }
+        else if (input.includes("varistor")) {
+            window.location.href = "varistor.html";
+        }
+        else if (input.includes("fusible")) {
+            window.location.href = "fusible.html";
+        }
+        else if (input.includes("ceramic capacitor")) {
+            window.location.href = "ceramic.html";
+        }
+        else if (input.includes("electrolytic capacitor")) {
+            window.location.href = "electrolytic capacitor.html";
+        }
+        else if (input.includes("film capacitor")) {
+            window.location.href = "film.html";
+        }
+        else if (input.includes("mica capacitor")) {
+            window.location.href = "mica.html";
+        }
+        else if (input.includes("supercapacitor")) {
+            window.location.href = "super.html";
+        }
+        else if (input.includes("step up transformer")) {
+            window.location.href = "step up.html";
+        }
+        else if (input.includes("step  down transformer")) {
+            window.location.href = "step down.html";
+        }
+        else if (input.includes("isolation transformer")) {
+            window.location.href = "isolation.html";
+        }
+        else if (input.includes("auto transformer")) {
+            window.location.href = "auto.html";
+        }
+        else if (input.includes("power transformer")) {
+            window.location.href = "power.html";
+        }
+        else if (input.includes("instrument transformer")) {
+            window.location.href = "instrument.html";
+        }
+        else if (input.includes("twisted cable pair")) {
+            window.location.href = "twisted.html";
+        }
+        else if (input.includes("coaxial cable")) {
+            window.location.href = "coaxial.html";
+        }
+        else if (input.includes("optical fiber")) {
+            window.location.href = "optical.html";
+        }
+        else if (input.includes("ribbon cable")) {
+            window.location.href = "ribbon.html";
+        }
+        else if (input.includes("shielded cable")) {
+            window.location.href = "shielded.html";
+        }
+        else if (input.includes("unshielded cable")) {
+            window.location.href = "unshielded.html";
+        }
+
+        else {
+            alert("Component not found");
+        }
+    }
+}
+    </script>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            
+            <!-- Logo + Name -->
+            <img src="logo.png" alt="Logo" class="logo">
+            </div>
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+</header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <input type="text" id="searchBox" placeholder="Search components" onkeypress="searchComponent(event)">
+
+
+
+        <section class="filters">
+
+            <label class="component-label">Select Component Type</label>
+
+            <!-- PASSIVE -->
+            <button onclick="toggleDropdown('passive')">Passive</button>
+            <div id="passive" class="dropdown" style="display:none;">
+                <a href="resistors.html">Resistors</a>
+                <a href="capacitors.html">Capacitors</a>
+                <a href="inductors.html">Inductors</a>
+                <a href="transformers.html">Tranformers</a>
+                <a href="connectors.html">Connectors</a>
+            </div>
+
+            <!-- ACTIVE -->
+            <button onclick="toggleDropdown('active')">Active</button>
+            <div id="active" class="dropdown" style="display:none;">
+                <a href="diodes.html">Diodes</a>
+                <a href="transistor.html">Transistors</a>
+                <a href="ics.html">ICs</a>
+            </div>
+
+            <!-- SENSOR -->
+            <button onclick="toggleDropdown('sensor')">Sensor</button>
+            <div id="sensor" class="dropdown" style="display:none;">
+                <a href="temperature.html">Temperature Sensor</a>
+                <a href="light.html">Light Sensor</a>
+                <a href="pressure.html">Pressure Sensor</a>
+                <a href="proximity.html">Proximity Sensor</a>
+                <a href="motion.html">Motion Sensor</a>
+                <a href="humidity.html">Humidity Sensor</a>
+                <a href="gas.html">Gas Sensor</a>
+            </div>
+
+            <br><br>
+
+            <!-- BACK BUTTON -->
+            <a href="index.html" class="button">⬅ Back to Home</a>
+
+        </section>
+    
+
+   
+
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <p>Contact Us:</p>
+            <p>Phone:📞7907516323,8301934620</p>
+            <p>Email:📧emaleena7@gmail.com,sandradgfgb.com</p>
+        </div>
+    </footer>
+
+</body>
+</html>

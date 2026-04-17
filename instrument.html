@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Instrument Transformer</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial;
+    background: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Grid */
+.instrument-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Card */
+.instrument-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.instrument-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image */
+.instrument-card img {
+    width: 100px;
+}
+
+/* Details box */
+#details {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    display: none;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.35s ease;
+}
+
+/* when active */
+#details.show {
+    display: block;
+    transform: scale(1);
+    opacity: 1;
+}
+</style>
+
+<script>
+function showinstrument(type) {
+
+    let title = document.getElementById("title");
+    let info = document.getElementById("info");
+    let box = document.getElementById("details");
+    
+
+    if (type === "ct") {
+        title.innerHTML = "Current Transformer (CT)";
+        info.innerHTML = "A current transformer steps down high AC current to a safe, measurable value (typically 1A or 5A) for meters and protection devices. It provides electrical isolation and is used in power systems for current measurement and fault detection.";
+    }
+
+    else if (type === "pt") {
+        title.innerHTML = "Potential Transformer (PT) / Voltage Transformer (VT)";
+        info.innerHTML = "A potential transformer steps down high voltage to a lower, standardized level (like 110V) for measurement and protection instruments. It ensures safe voltage monitoring in substations and electrical systems..";
+    }
+
+    else if (type === "cvt") {
+        title.innerHTML = "Capacitive Voltage Transformer (CVT)";
+        info.innerHTML = "Uses a capacitor divider along with a transformer to step down very high transmission voltages. It is widely used in high-voltage transmission lines (above 100kV) for metering and protection.";
+    }
+    else if (type === "protective") {
+        title.innerHTML = "Protective Instrument Transformers";
+        info.innerHTML = "Specially designed CTs and PTs used in relay and protection systems. They help detect faults like overloads, short circuits, and abnormal conditions in power networks.";
+    }
+    else if (type === "metering") {
+        title.innerHTML = "Metering Instrument Transformers";
+        info.innerHTML = "These are high-accuracy CTs and PTs used specifically for energy measurement and billing purposes in commercial and industrial power systems.";
+    }
+
+       box.classList.remove("show");
+ 
+    box.style.display = "block";
+
+// trigger animation
+setTimeout(() => {
+    box.classList.add("show");
+}, 10);
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+     
+        <div class="header-container">
+            
+            <!-- Logo + Name -->
+            <img src="logo.jpeg" alt="Logo" class="logo">
+            </div>
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+
+</header>
+
+<h2>Instrument Transformer</h2>
+
+<!-- instrument transformer GRID -->
+<div class="instrument-container">
+
+    <div class="instrument-card" onclick="showinstrument('ct')">
+        <img src="current.jpeg">
+        <p>CURRENT TRANSFORMER</p>
+    </div>
+
+    <div class="instrument-card" onclick="showinstrument('pt')">
+        <img src="potential.jpeg">
+        <p>POTENTIAL TRANSFORMER</p>
+    </div>
+
+    <div class="instrument-card" onclick="showinstrument('cvt')">
+        <img src="capacitive.jpeg">
+        <p>CAPACITIVE VOLTAGE TRANSFORMER</p>
+    </div>
+
+    <div class="instrument-card" onclick="showinstrument('protective')">
+        <img src="protective.jpeg">
+        <p>PROTECTIVE TRANSFORMER</p>
+    </div>
+    <div class="instrument-card" onclick="showinstrument('metering')">
+        <img src="metering.jpeg">
+        <p>METERING INSTRUMENT TRANSFORMER</p>
+    </div>
+
+
+ </div> 
+   
+<!-- DETAILS -->
+<div id="details">
+    <h2 id="title"></h2>
+    <p id="info"></p>
+</div>
+
+<br>
+<br><br>
+<br>
+<br><br>
+<a href="transformers.html" class="button">⬅ Back to Transformers</a>
+
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+        <p>Phone:📞7837674687,636868276487</p>
+        <p>Email:📧emaleendgjj.com,sandradgfgb.com</p>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carbon Film Resistor</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial;
+    background: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Grid */
+.carbonfilm-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Card */
+.carbonfilm-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.carbonfilm-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image */
+.carbonfilm-card img {
+    width: 100px;
+}
+
+/* Details box */
+#details {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    display: none;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.35s ease;
+}
+
+/* when active */
+#details.show {
+    display: block;
+    transform: scale(1);
+    opacity: 1;
+}
+</style>
+
+<script>
+function showcarbonfilm(type) {
+
+    let title = document.getElementById("title");
+    let info = document.getElementById("info");
+    let box = document.getElementById("details");
+    
+
+    if (type === "axial leaded") {
+        title.innerHTML = "Axial-Leaded Carbon Film Resistors";
+        info.innerHTML = "Axial Lead Carbon Film Resistor is a widely used through-hole resistor with leads on both ends, mainly used for basic electronic functions like current limiting and voltage division. It typically has a power rating of 1/8W to 2W, resistance range from 1Ω to 10MΩ, tolerance of ±2% to ±5%, temperature coefficient around -200 to -1000 ppm/°C, and operates up to about 250V, making it suitable for general-purpose circuits.";
+    }
+
+    else if (type === "radial leaded") {
+        title.innerHTML = "Radial-Leaded Carbon Film Resistors";
+        info.innerHTML = "Radial Lead Carbon Film Resistor has both leads on one side, allowing vertical mounting and saving PCB space in compact designs. It usually supports 1/8W to 1W power rating, resistance range from 1Ω to 5MΩ, tolerance of ±2% to ±5%, temperature coefficient around -200 to -800 ppm/°C, and operating voltage up to 200V, making it ideal for compact consumer electronics. ";
+    }
+
+    else if (type === "high voltage") {
+        title.innerHTML = "High-Voltage/Power Carbon Film Resistors";
+        info.innerHTML = "High Voltage Carbon Film Resistor is designed to handle extreme voltages safely using enhanced insulation and thick film construction. It typically supports 0.5W to 3W power rating, resistance range from 10kΩ to 100MΩ, tolerance of ±1% to ±5%, and can withstand voltages up to 15kV with a temperature range of -55°C to +200°C, making it suitable for power supplies and industrial systems. ";
+    }
+
+    else if (type === "high power") {
+        title.innerHTML = "High Power Carbon Film Resistor";
+        info.innerHTML = "High Power Carbon Film Resistor is built to handle high current and heat dissipation in demanding circuits like amplifiers and power control systems. It generally supports 1W to 10W power rating, resistance range from 0.1Ω to 10MΩ, tolerance of ±1% to ±5%, temperature coefficient around ±300 ppm/°C, and can operate up to 350°C, ensuring stable performance under heavy loads. ";
+    }
+    else if (type === "precision") {
+        title.innerHTML = "Precision Carbon Film Resistor";
+        info.innerHTML = "Precision Carbon Film Resistor is designed for high accuracy applications where stable and exact resistance values are required. It offers a power rating of 1/4W to 1W, resistance range from 10Ω to 1MΩ, very low tolerance of ±0.1% to ±1%, temperature coefficient of ±50 to ±100 ppm/°C, and excellent long-term stability, making it suitable for measurement and audio equipment. ";
+    }
+    else if (type === "general purpose") {
+        title.innerHTML = "General Purpose Carbon Film Resistor";
+        info.innerHTML = "General Purpose Carbon Film Resistor is the most common and cost-effective resistor used in basic electronics where high precision is not required. It typically has a power rating of 1/8W to 2W, resistance range from 1Ω to 10MΩ, tolerance of ±5% to ±10%, temperature coefficient around -200 to -1000 ppm/°C, and is widely used in everyday electronic circuits and educational projects. ";
+    }
+   box.classList.remove("show");
+ 
+    box.style.display = "block";
+
+// trigger animation
+setTimeout(() => {
+    box.classList.add("show");
+}, 10);
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+     
+        <div class="header-container">
+            
+            <!-- Logo + Name -->
+            <img src="logo.jpeg" alt="Logo" class="logo">
+            </div>
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+
+</header>
+
+<h2>Carbon Film Resistor</h2>
+
+<!-- CARBON FILM GRID -->
+<div class="carbonfilm-container">
+
+    <div class="carbonfilm-card" onclick="showcarbonfilm('axial leaded')">
+        <img src="axial.jpeg">
+        <p>AXIAL LEADED CARBON FILM RESISTOR</p>
+    </div>
+
+    <div class="carbonfilm-card" onclick="showcarbonfilm('radial leaded')">
+        <img src="radial.jpeg">
+        <p>RADIAL LEADED CARBON FILM RESISTOR</p>
+    </div>
+
+    <div class="carbonfilm-card" onclick="showcarbonfilm('high voltage')">
+        <img src="high voltage.jpeg">
+        <p>HIGH VOLTAGE CARBON FILM RESISTOR</p>
+    </div>
+
+    <div class="carbonfilm-card" onclick="showcarbonfilm('high power')">
+        <img src="high power.jpeg">
+        <p>HIGH POWER CARBON FILM RESISTOR</p>
+    </div>
+
+    <div class="carbonfilm-card" onclick="showcarbonfilm('precision')">
+        <img src="precision.jpeg">
+        <p>PRECISION CARBON FILM RESISTOR</p>
+    </div>
+
+    <div class="carbonfilm-card" onclick="showcarbonfilm('general purpose')">
+        <img src="general purpose.jpeg">
+        <p>GENERAL PURPOSE CARBON FILM RESISTOR</p>
+    </div>
+ </div>    
+<!-- DETAILS -->
+<div id="details">
+    <h2 id="title"></h2>
+    <p id="info"></p>
+</div>
+
+<br>
+<br><br>
+<br>
+<br><br>
+<a href="resistors.html" class="button">⬅ Back to Resistors</a>
+
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+        <p>Phone:📞7837674687,636868276487</p>
+        <p>Email:📧emaleendgjj.com,sandradgfgb.com</p>
+    </div>
+</footer>
+</body>
+</html>
