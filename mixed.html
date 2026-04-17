@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MIXED-SIGNAL</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial;
+    background: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Grid */
+.mixed-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Card */
+.mixed-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.mixed-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image */
+.mixed-card img {
+    width: 100px;
+}
+
+/* Details box */
+#details {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+</style>
+
+<script>
+    window.onload = function () {
+
+    let hash = window.location.hash;
+
+    if (hash) {
+        let type = hash.replace("#", "");
+        showMixed(type);
+    }
+}
+function showMixed(type) {
+
+    let title = document.getElementById("title");
+    let info = document.getElementById("info");
+    let box = document.getElementById("details");
+
+    
+
+    if (type === "adc0804") {
+        title.innerHTML = "ADC0804";
+        info.innerHTML = "The ADC0804 analog-to-digital converter is an 8-bit ADC that operates with a 5 V supply. It uses the successive approximation method and provides a conversion time of about 100 µs. The input voltage range is typically 0–5 V, and it has an on-chip clock generator (or can use an external clock). It offers TTL-compatible outputs, includes chip select and read/write control pins, and is widely used in microcontroller interfacing applications.";
+    }
+
+    else if (type === "mcp3008") {
+        title.innerHTML = "MCP3008";
+        info.innerHTML = "The MCP3008 ADC is a 10-bit analog-to-digital converter with 8 input channels, using the SPI interface for communication. It operates with a supply voltage from 2.7 V to 5.5 V and provides a maximum sampling rate of about 200 ksps (at 5 V). The input voltage range is 0 to Vref, and it offers low power consumption, high accuracy, and single-ended or differential input modes, making it ideal for interfacing sensors with microcontrollers like Arduino or Raspberry Pi";
+    }
+
+    else if (type === "dac0808") {
+        title.innerHTML = "DAC0808";
+        info.innerHTML = "The DAC0808 digital-to-analog converter is an 8-bit DAC that uses a current-output architecture. It operates with a supply voltage typically of ±5 V to ±15 V and provides a fast settling time of about 150 ns. The output is a proportional current that requires an external op-amp to convert to voltage. It offers high accuracy, low nonlinearity, and is compatible with TTL logic levels, making it suitable for waveform generation and signal processing applications.";
+    }
+    else if(type === "msp430") {
+        title.innerHTML = "MSP430";
+        info.innerHTML = "The MSP430 microcontroller is a 16-bit ultra-low-power MCU that operates typically from 1.8 V to 3.6 V. It features a RISC architecture, with clock speeds up to around 16–25 MHz (depending on variant), and includes on-chip peripherals like ADC, timers, UART, SPI, and I²C. It has very low power consumption, with multiple low-power modes, making it ideal for battery-powered applications. The MCU also provides Flash memory, RAM, and high integration for embedded systems.";
+    }
+    else if(type === "snapdragonx65") {
+        title.innerHTML = "QUALCOMM SNAPDRAGON X65";
+        info.innerHTML = "The Qualcomm Snapdragon X65 5G modem-RF system is a high-end 5G modem that supports download speeds up to 10 Gbps and advanced millimeter wave (mmWave) and sub-6 GHz bands. It is built on a 4 nm process and features AI-based antenna tuning for improved signal performance. The modem supports carrier aggregation, dynamic spectrum sharing (DSS), and improved power efficiency. It also includes an integrated RF system with wide bandwidth support, making it suitable for flagship smartphones and high-speed connectivity devices.";
+    }
+    else if(type === "max232") {
+        title.innerHTML = "MAX232";
+        info.innerHTML = "The MAX232 level converter IC is a dual driver/receiver used to convert TTL logic levels (0–5 V) to RS-232 voltage levels (±3 V to ±15 V). It operates from a single 5 V supply and uses internal charge pumps with external capacitors to generate the required RS-232 voltages. It supports data rates up to about 120 kbps, provides two transmitters and two receivers, and features low power consumption with reliable serial communication, commonly used for interfacing microcontrollers with computers.";
+    }
+
+    
+    box.style.display = "block";
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+     
+        <div class="header-container">
+            
+            <!-- Logo + Name -->
+            <img src="logo.png" alt="Logo" class="logo">
+            </div>
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+
+</header>
+
+<h2>MIXED-SIGNAL ICs</h2>
+
+<!-- MIXED GRID -->
+<div class="mixed-container">
+
+    <div class="mixed-card" onclick="showMixed('adc0804')">
+        <img src="images/adc0804.jpg">
+        <p>ADC0804</p>
+    </div>
+
+    <div class="mixed-card" onclick="showMixed('mcp3008')">
+        <img src="images/mcp3008.jpg">
+        <p>MCP3008</p>
+    </div>
+    <div class="mixed-card" onclick="showMixed('dac0808')">
+        <img src="images/dac0808.jpg">
+        <p>DAC0808</p>
+    </div>
+    <div class="mixed-card" onclick="showMixed('msp430')">
+        <img src="images/msp430.jpg">
+        <p>MSP430</p>
+    </div>
+    <div class="mixed-card" onclick="showMixed('snapdragonx65')">
+        <img src="images/qualcomm.jpg">
+        <p>QUALCOMM SNAPDRAGON X65</p>
+    </div>
+    <div class="mixed-card" onclick="showMixed('max232')">
+        <img src="images/max232.jpg">
+        <p>MAX232</p>
+    </div>
+</div>
+
+<!-- DETAILS -->
+<div id="details">
+    <h2 id="title"></h2>
+    <p id="info"></p>
+</div>
+
+<br>
+<a href="ics.html" class="button">⬅ Back to ICs</a>
+
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+        <p>Phone:📞7907516323,8301934620</p>
+        <p>Email:📧emaleena7@gmail.com,sandradgfgb.com</p>
+    </div>
+</footer>
+</body>
+</html>

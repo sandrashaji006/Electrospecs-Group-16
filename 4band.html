@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link rel="stylesheet" href="styles1.css">
+
+<meta charset="UTF-8">
+<title>4-BAND RESISTOR CALCULATOR</title>
+
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    background-color: #f8f8f8;
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+}
+
+@keyframes riseUp {
+  0% { transform: translateY(50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.title-black {
+    color: #000000;
+}
+
+.riseup {
+    animation: riseUp 0.8s ease-out;
+    animation-fill-mode: both;
+}
+
+/* 🔲 Resistor container */
+.resistor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+/* 🧊 Body */
+.resistor-body {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: linear-gradient (145deg, #d6d6d6, #ffffff);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* 🎨 Bands */
+.band {
+    width: 18px;
+    height: 70px;
+    margin: 0 4px;
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+}
+
+select, button {
+    margin: 5px;
+    padding: 8px 12px;
+    font-size: 16px;
+    color: #0f0f0f;
+}
+
+/* ⚡ Wires */
+.wire {
+    width: 60px;
+    height: 4px;
+    background: silver;
+}
+
+h1 {
+    color: #fcfcfc;
+    margin-top: 50px;
+}
+
+#result {
+    margin-top: 50px;
+    font-weight: bold;
+    font-size: 32px;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-container">
+        <img src="logo.jpeg" alt="Logo" class="logo">
+    </div>
+
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+</header>
+
+<h1 class="riseup title-black">4-BAND RESISTOR CALCULATOR</h1>
+
+<hr class="riseup">
+
+<br>
+
+<div class="riseup delay3">
+
+<label>Band 1:</label>
+<select id="band1"></select>
+
+<label>Band 2:</label>
+<select id="band2"></select>
+
+<label>Multiplier:</label>
+<select id="multiplier"></select>
+
+<label>Tolerance:</label>
+<select id="tolerance"></select>
+
+<br><br><br><br>
+
+<button class="riseup delay4" onclick="calculate()">Calculate Resistance</button>
+
+<div class="resistor">
+    <div class="wire"></div>
+
+    <div class="resistor-body">
+        <div id="b1" class="band"></div>
+        <div id="b2" class="band"></div>
+        <div id="b3" class="band"></div>
+        <div id="b4" class="band"></div>
+    </div>
+
+    <div class="wire"></div>
+</div>
+
+<div id="result" class="riseup delay5"></div>
+
+</div>
+
+<script>
+
+const colors = {
+    Black: 0, Brown: 1, Red: 2, Orange: 3, Yellow: 4,
+    Green: 5, Blue: 6, Violet: 7, Grey: 8, White: 9
+};
+
+const multipliers = {
+    Black: 1, Brown: 10, Red: 100, Orange: 1000,
+    Yellow: 10000, Green: 100000, Blue: 1000000,
+    Gold: 0.1, Silver: 0.01
+};
+
+const tolerances = {
+    Gold: "±5%", Silver: "±10%"
+};
+
+// Populate dropdowns
+function populateDropdown(id, obj) {
+    let select = document.getElementById(id);
+
+    let defaultOption = document.createElement("option");
+    defaultOption.text = "Select";
+    defaultOption.disabled = true;
+    defaultOption.selected = true;
+    select.appendChild(defaultOption);
+
+    for (let key in obj) {
+        let option = document.createElement("option");
+        option.value = key;
+        option.text = key;
+        select.appendChild(option);
+    }
+}
+
+// Fill dropdowns after page load
+window.onload = function() {
+    populateDropdown("band1", colors);
+    populateDropdown("band2", colors);
+    populateDropdown("multiplier", multipliers);
+    populateDropdown("tolerance", tolerances);
+};
+
+// Calculate resistance
+function calculate() {
+    document.getElementById("result").classList.remove("riseup");
+    void document.getElementById("result").offsetWidth;
+    document.getElementById("result").classList.add("riseup");
+
+    let b1 = document.getElementById("band1").value;
+    let b2 = document.getElementById("band2").value;
+    let mult = document.getElementById("multiplier").value;
+    let tol = document.getElementById("tolerance").value;
+
+    if (!b1 || !b2 || !mult || !tol) {
+        document.getElementById("result").innerText = "Please select all bands!";
+        return;
+    }
+
+    let value = ((colors[b1] * 10) + colors[b2]) * multipliers[mult];
+
+    document.getElementById("result").innerText =
+        "Resistance: " + formatResistance(value) + " " + tolerances[tol];
+
+    document.getElementById("b1").style.background = b1.toLowerCase();
+    document.getElementById("b2").style.background = b2.toLowerCase();
+    document.getElementById("b3").style.background = mult.toLowerCase();
+    document.getElementById("b4").style.background = tol.toLowerCase();
+}
+
+// Format output
+function formatResistance(value) {
+    if (value >= 1000000) return (value / 1000000) + " MΩ";
+    if (value >= 1000) return (value / 1000) + " kΩ";
+    return value + " Ω";
+}
+
+</script>
+
+<!-- FOOTER (FIXED POSITION) -->
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+        <p>Phone:📞7837674687,636868276487</p>
+        <p>Email:📧emaleendgjj.com,sandradgfgb.com</p>
+    </div>
+</footer>
+
+</body>
+</html>

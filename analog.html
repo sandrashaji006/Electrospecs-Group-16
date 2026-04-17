@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANALOG</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial;
+    background: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Grid */
+.analog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Card */
+.analog-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.analog-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image */
+.analog-card img {
+    width: 100px;
+}
+
+/* Details box */
+#details {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+</style>
+
+<script>
+    window.onload = function () {
+
+    let hash = window.location.hash;
+
+    if (hash) {
+        let type = hash.replace("#", "");
+        showAnalog(type);
+    }
+}
+function showAnalog(type) {
+
+    let title = document.getElementById("title");
+    let info = document.getElementById("info");
+    let box = document.getElementById("details");
+
+    
+
+    if (type === "lm741") {
+        title.innerHTML = "LM741";
+        info.innerHTML = "The LM741 operational amplifier is a general-purpose op-amp that typically operates with a ±15V supply (range ±5V to ±18V). It has a high open-loop gain (~200,000), input impedance around 2 MΩ, and input offset voltage about 1 mV. Its bandwidth is about 1 MHz with a slew rate of 0.5 V/µs, making it suitable for low-frequency applications. The output does not reach the exact supply rails and it includes internal compensation and short-circuit protection.";
+    }
+
+    else if (type === "lm317") {
+        title.innerHTML = "LM317";
+        info.innerHTML = "The LM317 voltage regulator is an adjustable positive voltage regulator that can provide an output voltage from about 1.25 V to 37 V with input up to around 40 V. It can deliver up to 1.5 A of output current with proper heat sinking. The device has a reference voltage of 1.25 V, load regulation around 0.1%, and line regulation about 0.01%V, ensuring stable output. It also includes thermal overload protection, short-circuit protection, and safe operating area protection, making it reliable for power supply applications.";
+    }
+
+    else if (type === "555") {
+        title.innerHTML = "555 TIMER";
+        info.innerHTML = "The 555 timer IC is a versatile timing device that operates with a supply voltage from 4.5 V to 16 V (up to 18 V max). It can source or sink up to 200 mA of output current. The timing range varies from microseconds to hours, depending on external components. It has a trigger level at 1/3 Vcc and threshold level at 2/3 Vcc, with good stability and accuracy. The IC includes internal voltage divider, comparator, flip-flop, and discharge transistor, making it suitable for astable, monostable, and bistable applications.";
+    }
+    else if(type === "cd4046") {
+        title.innerHTML = "CD4046";
+        info.innerHTML = "The CD4046 phase-locked loop IC is a CMOS phase-locked loop that operates with a supply voltage from 3 V to 15 V. It contains a voltage-controlled oscillator (VCO) and two phase comparators. The VCO frequency can range from a few Hz up to about 1 MHz depending on external components. It features high input impedance, low power consumption, and good noise immunity. The IC is commonly used in frequency synthesis, demodulation, and clock recovery applications.";
+    }
+    else if(type === "cd4066") {
+        title.innerHTML = "CD4066";
+        info.innerHTML = "The CD4066 quad bilateral switch IC is a CMOS IC that contains four independent analog switches. It operates with a supply voltage from 3 V to 15 V and has low ON resistance (typically 100–300 Ω depending on supply voltage). It can pass both analog and digital signals in either direction. The IC features high input impedance, low power consumption, and fast switching speed, making it suitable for signal gating, multiplexing, and switching applications";
+    }
+
+    
+    box.style.display = "block";
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+     
+        <div class="header-container">
+            
+            <!-- Logo + Name -->
+            <img src="logo.png" alt="Logo" class="logo">
+            </div>
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+
+</header>
+
+<h2>ANALOG SIGNAL ICs</h2>
+
+<!-- ANALOG GRID -->
+<div class="analog-container">
+
+    <div class="analog-card" onclick="showAnalog('lm741')">
+        <img src="images/lm741.jpg">
+        <p>LM741</p>
+    </div>
+
+    <div class="analog-card" onclick="showAnalog('lm317')">
+        <img src="images/lm317.jpg">
+        <p>LM317</p>
+    </div>
+    <div class="analog-card" onclick="showAnalog('555')">
+        <img src="images/555.jpg">
+        <p>555 TIMER</p>
+    </div>
+    <div class="analog-card" onclick="showAnalog('cd4046')">
+        <img src="images/cd4046.jpg">
+        <p>CD4046</p>
+    </div>
+    <div class="analog-card" onclick="showAnalog('cd4066')">
+        <img src="images/cd4066.jpg">
+        <p>CD4066</p>
+    </div>
+    
+</div>
+
+<!-- DETAILS -->
+<div id="details">
+    <h2 id="title"></h2>
+    <p id="info"></p>
+</div>
+
+<br>
+<a href="ics.html" class="button">⬅ Back to ICs</a>
+
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+        <p>Phone:📞7907516323,8301934620</p>
+        <p>Email:📧emaleena7@gmail.com,sandradgfgb.com</p>
+    </div>
+</footer>
+</body>
+</html>

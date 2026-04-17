@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zener Diodes</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial;
+    background: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Grid */
+.zener-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Card */
+.zener-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.zener-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image */
+.zener-card img {
+    width: 100px;
+}
+
+/* Details box */
+#details {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+</style>
+
+<script>
+function showZener(type) {
+
+    let title = document.getElementById("title");
+    let info = document.getElementById("info");
+    let box = document.getElementById("details");
+    
+
+    if (type === "axial leaded") {
+        title.innerHTML = "Axial-Leaded Carbon Film Resistors";
+        info.innerHTML = "Axial-leaded carbon film resistors are fixed-value resistors characterized by a carbon film deposited on a cylindrical ceramic core, with leads extending horizontally from both ends. They are commonly used in through-hole PCB designs, offering a low-cost solution for current limiting, voltage division, and signal conditioning, typically with a tolerance of 2% to 5%";
+    }
+
+    else if (type === "radial leaded") {
+        title.innerHTML = "Radial-Leaded Carbon Film Resistors";
+        info.innerHTML = "Radial-leaded carbon film resistors are a type of through-hole, fixed resistor where both wire leads extend from the same side of the cylindrical body, rather than opposite ends. They are designed for high-density mounting, allowing them to occupy less board space than their axial counterparts, making them ideal for compact circuits, consumer electronics, and vertical installation. ";
+    }
+
+    else if (type === "high voltage") {
+        title.innerHTML = "High-Voltage/Power Carbon Film Resistors";
+        info.innerHTML = "High-voltage/power carbon film resistors are specialized components designed to handle high energy levels, offering superior stability at elevated temperatures (up to 350°C) and operating voltages up to 15kV. These resistors are often manufactured with thick, specialized film layers to manage high surge currents and power dissipation in demanding applications. ";
+    }
+
+ 
+    box.style.display = "block";
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+     
+        <div class="header-container">
+            
+            <!-- Logo + Name -->
+            <img src="logo.png" alt="Logo" class="logo">
+            </div>
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+
+</header>
+
+<h2>Zener Diodes</h2>
+
+<!-- ZENER GRID -->
+<div class="zener-container">
+
+    <div class="zener-card" onclick="showZener('1n4728a')">
+        <img src="images/1n4728a.jpg">
+        <p>1N4728A</p>
+    </div>
+
+    <div class="zener-card" onclick="showZener('1n4730a')">
+        <img src="images/1n4730a.jpg">
+        <p>1N4730A</p>
+    </div>
+
+    <div class="zener-card" onclick="showZener('1n4732a')">
+        <img src="images/1n4732a.jpg">
+        <p>1N4732A</p>
+    </div>
+    <div class="zener-card" onclick="showZener('1n4733a')">
+        <img src="images/1n4733a.jpg">
+        <p>1N4733A</p>
+    </div>
+    <div class="zener-card" onclick="showZener('1n4735a')">
+        <img src="images/1n4735a.jpg">
+        <p>1N4735A</p>
+    </div>
+    <div class="zener-card" onclick="showZener('bzx55c3v3')">
+        <img src="images/bzx55c3v3.jpg">
+        <p>BZX55C3V3</p>
+    </div>
+    <div class="zener-card" onclick="showZener('bzx55c5v1')">
+        <img src="images/bzx55c5v1.jpg">
+        <p>BZX55C5V1</p>
+    </div>
+    <div class="zener-card" onclick="showZener('bzx55c12')">
+        <img src="images/bzx55c12.jpg">
+        <p>BZX55C12</p>
+    </div>
+
+</div>
+
+<!-- DETAILS -->
+<div id="details">
+    <h2 id="title"></h2>
+    <p id="info"></p>
+</div>
+
+<br>
+<a href="diodes.html" class="button">⬅ Back to Diodes</a>
+
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+        <p>Phone:📞7837674687,636868276487</p>
+        <p>Email:📧emaleendgjj.com,sandradgfgb.com</p>
+    </div>
+</footer>
+</body>
+</html>

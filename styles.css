@@ -1,0 +1,172 @@
+/* Base body styling with soft neutral background */
+/* General Reset */
+/* General body styling */
+body {
+    background-color: #f8f8f8; /* off-white background */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    background-color: #001f3f; /* navy blue */
+    color: white;
+    padding: 15px 5px;
+    display: flex;
+    align-items:center;
+    justify-content: space-between;
+}
+
+/* Left side */
+.header-left h1 {
+    margin: 0;
+    padding:0;
+    font-size: 24px;
+    display:inline;
+}
+
+
+/* Scrolling banner */
+.scrolling-banner {
+    width: 60%;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: 5px;
+    flex:1;
+}
+#searchBox {
+    width: 60%;
+    padding: 10px;
+    margin: 20px auto;
+    display: block;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* Text animation */
+.scrolling-banner p {
+    display: inline-block;
+    padding-left: 100%;
+    animation: scrollText 10s linear infinite;
+}
+
+@keyframes scrollText {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+
+/* Logo and title in header */
+.logo {
+    width: 60px;
+    height: auto;
+    margin-right: 15px;
+}
+
+
+/* Main content center */
+.intro-content {
+    text-align: center;
+    padding: 105px 20px;
+    width: 90%;          /* increase width */
+    margin: auto;
+}
+
+/* Highlighted first paragraph */
+.intro-content p strong {
+    font-size: 22px;
+    background: linear-gradient(to right, #007BFF, #00c6ff);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Buttons */
+.buttons {
+    margin-top: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 10px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+/* Hover effect for buttons */
+.button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Footer styling */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: left;
+}
+
+/* Footer container */
+.footer-container {
+    max-width: 1000px;
+}
+
+/* Components page buttons */
+.filters {
+    text-align: center;
+    margin: 90px auto;
+}
+.component-label {
+    font-size: 28px;
+    font-weight: bold;
+    color: #001f3f;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.filters button {
+    padding: 12px 20px;
+    margin: 10px;
+    border: none;
+    background-color: #001f3f;
+    color: white;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.filters button:hover {
+    background-color: #003366;
+}
+
+/* Dropdown styling */
+.dropdown {
+    margin: 10px auto;
+    width: 200px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Dropdown links */
+.dropdown a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.dropdown a:hover {
+    background-color: #ddd;
+}

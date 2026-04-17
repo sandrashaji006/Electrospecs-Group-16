@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HUMIDITY SENSOR</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial;
+    background: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Grid */
+.humidity-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Card */
+.humidity-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.humidity-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image */
+.humidity-card img {
+    width: 100px;
+}
+
+/* Details box */
+#details {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+</style>
+
+<script>
+    window.onload = function () {
+
+    let hash = window.location.hash;
+
+    if (hash) {
+        let type = hash.replace("#", "");
+        showHumidity(type);
+    }
+}
+function showHumidity(type) {
+
+    let title = document.getElementById("title");
+    let info = document.getElementById("info");
+    let box = document.getElementById("details");
+
+    
+
+    if (type === "dht11") {
+        title.innerHTML = "DHT11";
+        info.innerHTML = "The DHT11 is an entry-level digital sensor that operates on a voltage range of 3V to 5.5V, making it compatible with most microcontrollers. It measures humidity from 20% to 90% RH with an accuracy of ±5% and temperature from 0°C to 50°C with an accuracy of ±2°C. Data is transmitted via a single-wire digital interface, requiring a pull-up resistor (typically 4.7kΩ to 10kΩ) for stable communication. While cost-effective and easy to interface, it has a slow sampling rate of 1Hz (one reading per second) and is best suited for indoor environments where extreme precision isn't required.";
+    }
+
+    else if(type === "bme280") {
+        title.innerHTML = "BME280";
+        info.innerHTML = "The BME280 is a high-precision all-in-one environmental sensor that measures humidity, temperature, and barometric pressure. It operates on a low voltage range of 1.71V to 3.6V, making it ideal for battery-powered IoT devices. It provides high-accuracy readings with a humidity range of 0% to 100% (±3% accuracy), a temperature range of -40°C to +85°C ( ±1.0°C accuracy), and pressure sensing from 300 to 1100 hPa ( ±1 hPa accuracy). The sensor is extremely compact and supports both I^2C and SPI communication protocols, allowing it to function as a highly precise altimeter with an altitude resolution of approximately 0.5 meters.";
+    }
+    else if (type === "sht40") {
+        title.innerHTML = "SHT40";
+        info.innerHTML = "The SHT40 humidity sensor is a high-precision digital sensor used for measuring relative humidity. It operates with a supply voltage of 1.08 V to 3.6 V and communicates via the I²C interface. The temperature measurement range is -40°C to +125°C with an accuracy of about ±0.2°C, while humidity measurement ranges from 0–100% RH with accuracy around ±1.8% RH. It features very low power consumption, fast response time, and factory calibration, making it ideal for IoT, weather monitoring, and industrial applications";
+    }
+    else if(type === "sht31") {
+        title.innerHTML = "SHT31";
+        info.innerHTML = "The SHT31 humidity sensor is a digital sensor used for measuring relative humidity with high accuracy. It operates with a supply voltage of 2.4 V to 5.5 V and communicates via I²C interface. The temperature measurement range is -40°C to +125°C with an accuracy of about ±0.3°C, while humidity range is 0–100% RH with accuracy around ±2% RH. It has low power consumption, fast response time, and built-in calibration, making it suitable for IoT and environmental monitoring applications";
+    }
+
+    
+    box.style.display = "block";
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+     
+        <div class="header-container">
+            
+            <!-- Logo + Name -->
+            <img src="logo.png" alt="Logo" class="logo">
+            </div>
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+
+</header>
+
+<h2>HUMIDITY SENSORS</h2>
+
+<!-- HUMIDITY SENSOR GRID -->
+<div class="humidity-container">
+
+    <div class="humidity-card" onclick="showHumidity('dht11')">
+        <img src="images/dht11.jpg">
+        <p>DHT11</p>
+    </div>
+   <div class="humidity-card" onclick="showHumidity('bme280')">
+        <img src="images/bme280.jpg">
+        <p>BME280</p>
+    </div>
+    <div class="humidity-card" onclick="showHumidity('sht40')">
+        <img src="images/sht40.jpg">
+        <p>SHT40</p>
+    </div>
+    <div class="humidity-card" onclick="showHumidity('sht31')">
+        <img src="images/sht31.jpg">
+        <p>SHT31</p>
+    </div>
+
+    
+</div>
+
+<!-- DETAILS -->
+<div id="details">
+    <h2 id="title"></h2>
+    <p id="info"></p>
+</div>
+
+<br>
+<a href="components.html" class="button">⬅ Back to Components</a>
+
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+        <p>Phone:📞7907516323,8301934620</p>
+        <p>Email:📧emaleena7@gmail.com,sandradgfgb.com</p>
+    </div>
+</footer>
+</body>
+</html>

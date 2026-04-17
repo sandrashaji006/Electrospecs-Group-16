@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LED</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial;
+    background: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Grid */
+.led-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Card */
+.led-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.led-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image */
+.led-card img {
+    width: 100px;
+}
+
+/* Details box */
+#details {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+</style>
+
+<script>
+    window.onload = function () {
+
+    let hash = window.location.hash;
+
+    if (hash) {
+        let type = hash.replace("#", "");
+        showLed(type);
+    }
+}
+function showLed(type) {
+
+    let title = document.getElementById("title");
+    let info = document.getElementById("info");
+    let box = document.getElementById("details");
+
+    
+
+    if (type === "red-led-5mm") {
+        title.innerHTML = "RED LED 5mm";
+        info.innerHTML = "A standard 5mm red LED (T-1 3/4 package) typically operates at a forward voltage of 1.8V to 2.2V with a recommended current of 20mA. It features a 5mm diameter body where the longer lead represents the anode (positive) and the shorter lead, often marked by a flat edge on the plastic base, is the cathode (negative). These LEDs generally emit light at a wavelength of 620nm to 660nm";
+    }
+
+    else if (type === "green-led-5mm") {
+        title.innerHTML = "GREEN LED 5mm";
+        info.innerHTML = "A standard 5mm Green LED typically operates with a forward voltage of 2.0V to 2.2V for traditional yellowish-green models, or 3.0V to 3.4V for high-brightness versions. They are designed for a continuous forward current of 20mA, though they can often handle peaks up to 30mA. Physically, the longer lead is the anode (positive), and the 5mm (T-1 3/4) plastic housing often features a flat edge to denote the cathode (negative).";
+    }
+
+    else if (type === "blue-led-5mm") {
+        title.innerHTML = "BLUE LED 5mm";
+        info.innerHTML = "A standard 5mm Blue LED typically requires a forward voltage between 3.0V and 3.4V, though some specialized models may range from 2.8V to 5V. They are designed for a continuous forward current of 20mA, with absolute maximum ratings often reaching 30mA. Blue LEDs generally emit light at a wavelength between 455nm and 475nm.";
+    }
+
+    else if(type === "white-led-5mm"){
+        title.innerHTML = "WHITE LED 5mm";
+        info.innerHTML = "A standard 5mm white LED typically operates at a forward voltage of 3.0V to 3.4V with a continuous current of 20mA. These through-hole components usually feature a clear lens for a focused 20°–30° beam or a diffused lens for wider visibility, producing a cool white light around 6000K. When wiring, the longer lead is the anode (+) and the shorter lead next to the flat edge is the cathode (-).";
+    }
+
+    else if(type === "smd-led-0805"){
+        title.innerHTML = "SMD LED 0805";
+        info.innerHTML = "The 0805 SMD LED is a compact surface-mount component measuring 2.0mm x 1.25mm with a low profile. While specs vary by color, most versions operate at a standard 20mA current, with forward voltages ranging from 1.8V–2.4V for red/yellow and 3.0V–3.4V for white/blue. Designed for high-density PCBs, these LEDs offer a wide 120° viewing angle, making them ideal for status indicators, backlighting, and portable electronics.";
+    }
+
+  
+
+    box.style.display = "block";
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+     
+        <div class="header-container">
+            
+            <!-- Logo + Name -->
+            <img src="logo.png" alt="Logo" class="logo">
+            </div>
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+
+</header>
+
+<h2>LED</h2>
+
+<!-- LED GRID -->
+<div class="led-container">
+
+    <div class="led-card" onclick="showLed('red-led-5mm')"id="red-led-5mm">
+        <img src="images/red led 5mm.jpg">
+        <p>RED LED 5mm</p>
+    </div>
+
+    <div class="led-card" onclick="showLed('green-led-5mm')"id="green-led-5mm">
+        <img src="images/green led 5mm.jpg">
+        <p>GREEN LED 5mm</p>
+    </div>
+
+    <div class="led-card" onclick="showLed('white-led-5mm')"id="white-led-5mm">
+        <img src="images/white led 5mm.jpg">
+        <p>WHITE LED 5mm</p>
+    </div>
+    <div class="led-card" onclick="showLed('blue-led-5mm')"id="blue-led-5mm">
+        <img src="images/blue led 5mm.jpg">
+        <p>BLUE LED 5mm</p>
+    </div>
+    <div class="led-card" onclick="showLed('smd-led-0805')"id="smd-led-0805">
+        <img src="images/smd led 0805.jpg">
+        <p>SMD LED 0805</p>
+    </div>
+
+</div>
+
+<!-- DETAILS -->
+<div id="details">
+    <h2 id="title"></h2>
+    <p id="info"></p>
+</div>
+
+<br>
+<a href="diodes.html" class="button">⬅ Back to Diodes</a>
+
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+       <p>Phone:📞7907516323,8301934620</p>
+        <p>Email:📧emaleena7@gmail.com,sandradgfgb.com</p>
+    </div>
+</footer>
+</body>
+</html>

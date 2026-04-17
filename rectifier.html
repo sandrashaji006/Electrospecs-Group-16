@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rectifier Diodes</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial;
+    background: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Grid */
+.rectifier-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Card */
+.rectifier-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.rectifier-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image */
+.rectifier-card img {
+    width: 100px;
+}
+
+/* Details box */
+#details {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+</style>
+
+<script>
+    window.onload = function () {
+
+    let hash = window.location.hash;
+
+    if (hash) {
+        let type = hash.replace("#", "");
+        showRectifier(type);
+    }
+}
+function showRectifier(type) {
+
+    let title = document.getElementById("title");
+    let info = document.getElementById("info");
+    let box = document.getElementById("details");
+    
+
+    if (type === "by127") {
+        title.innerHTML = "BY127";
+        info.innerHTML = "The BY127 is a silicon rectifier diode with a high peak reverse voltage (1250V–1300V) and a 1A average forward current, commonly used for high-voltage rectification in power supplies, TVs, and industrial applications. Housed in a DO-41 package, it operates between -55°C and +150°C.";
+    }
+
+    else if (type === "1n4001") {
+        title.innerHTML = "1N4001";
+        info.innerHTML = "The 1N4001 is a popular 1A general-purpose silicon rectifier diode used for low-voltage power supplies and circuit protection. It features a peak repetitive reverse voltage of 50V, an average rectified forward current of 1.0A, and a forward voltage drop of 1.1V at 1A. It operates in temperatures from -55°C to +175°C and is housed in a DO-41 package.";
+    }
+
+    else if (type === "1n4002") {
+        title.innerHTML = "1N4002";
+        info.innerHTML = "The 1N4002 is a popular, low-cost silicon rectifier diode, featuring a 100V maximum repetitive peak reverse voltage and a 1A average forward current. Designed for general-purpose, low-frequency power supply, and conversion applications, it has a 1.1V maximum forward voltage drop and a 30A peak forward surge current";
+    }
+
+    else if(type === "1n4003"){
+        title.innerHTML = "1N4003";
+        info.innerHTML = "The 1N4003 is a standard-recovery, axial-leaded silicon rectifier diode designed for 1A, 200V general-purpose AC-DC power conversion. It features a 30A peak surge capability, low forward voltage drop, and is commonly used in power supplies, adapters, and consumer electronics in a DO-41 package.";
+    }
+
+    else if(type === "1n4004"){
+        title.innerHTML = "IN4004";
+        info.innerHTML = "The 1N4004 is a popular 1A general-purpose silicon rectifier diode with a 400V repetitive peak reverse voltage, typically housed in a DO-41 package. It is designed for low-frequency rectification, featuring a 1.1V maximum forward voltage drop at 1A and a 30A peak forward surge current";
+    }
+
+    else if(type === "1n4005"){
+        title.innerHTML = "1N4005";
+        info.innerHTML = "The 1N4005 is a standard recovery, general-purpose 1A silicon rectifier diode with a 600V maximum repetitive reverse voltage and a 1.1V forward voltage drop. Housed in a DO-41 (or DO-204AL) package, it is commonly used for AC-to-DC power conversion due to its 30A peak surge current capacity and low reverse leakage.";
+    }
+
+    else if(type === "1n4006"){
+        title.innerHTML = "1N4006";
+        info.innerHTML = "The 1N4006 is a general-purpose, 1A silicon rectifier diode featuring an 800V peak repetitive reverse voltage and a 1.1V forward voltage drop in a DO-41 package. It is designed for low-cost, high-voltage, low-current switching, such as in power supplies and converters.";
+    }
+
+    else if(type === "1n4007"){
+        title.innerHTML = "1N4007";
+        info.innerHTML = "The 1N4007 is a widely used, general-purpose silicon rectifier diode designed for AC to DC power conversion, featuring a 1A average forward current and a 1000V maximum repetitive reverse voltage. It is housed in a DO-41 package, suitable for through-hole PCB mounting, and operates effectively in low-frequency power supply rectification";
+    }
+
+    else if(type ==="1n5402"){
+        title.innerHTML = "1N5402";
+        info.innerHTML = "The 1N5402 is a popular, robust, 3A, 200V axial-lead general-purpose rectifier diode, often used for power supply rectification and reverse voltage protection. It features a low forward voltage drop and a high current capacity in a durable DO-201AD plastic package. The cathode is marked by a gray band.";
+    }
+
+    else if(type ==="1n5404"){
+        title.innerHTML = "1N5404";
+        info.innerHTML = "The 1N5404 is a 3A, 400V general-purpose silicon rectifier diode used for low-to-medium power AC-to-DC conversion and polarity protection. Featuring a DO-201AD axial package, it offers reliable performance for DIY hobbyists and power supply applications. It handles high surge currents up to 200A and is commonly used in battery chargers and home electronics.";
+    }
+
+    else if(type ==="1n5408"){
+        title.innerHTML = "1N5408";
+        info.innerHTML = "The 1N5408 is a popular, low-cost, general-purpose silicon rectifier diode used for converting alternating current (AC) to direct current (DC). It handles a high average forward current of 3A and a high reverse voltage of 1000V, making it suitable for power supplies, battery chargers, and circuit protection applications.";
+    }
+
+    box.style.display = "block";
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+     
+        <div class="header-container">
+            
+            <!-- Logo + Name -->
+            <img src="logo.png" alt="Logo" class="logo">
+            </div>
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+
+</header>
+
+<h2>Rectifier Diodes</h2>
+
+<!-- RECTIFIER GRID -->
+<div class="rectifier-container">
+
+    <div class="rectifier-card" onclick="showRectifier('by127')">
+        <img src="images/by127.jpg">
+        <p>BY127</p>
+    </div>
+
+    <div class="rectifier-card" onclick="showRectifier('1n4001')">
+        <img src="images/1n4001.jpg">
+        <p>1N4001</p>
+    </div>
+
+    <div class="rectifier-card" onclick="showRectifier('1n4002')">
+        <img src="images/1n4002.jpg">
+        <p>1N4002</p>
+    </div>
+    <div class="rectifier-card" onclick="showRectifier('1n4003')">
+        <img src="images/1n4003.jpg">
+        <p>1N4003</p>
+    </div>
+    <div class="rectifier-card" onclick="showRectifier('1n4004')">
+        <img src="images/1n4004.jpg">
+        <p>1N4004</p>
+    </div>
+    <div class="rectifier-card" onclick="showRectifier('1n4005')">
+        <img src="images/1n4005.jpg">
+        <p>1N4005</p>
+    </div>
+    <div class="rectifier-card" onclick="showRectifier('1n4006')">
+        <img src="images/1n4006.jpg">
+        <p>1N4006</p>
+    </div>
+    <div class="rectifier-card" onclick="showRectifier('1n4007')">
+        <img src="images/1n4007.jpg">
+        <p>1N4007</p>
+    </div>
+    <div class="rectifier-card" onclick="showRectifier('1n5402')">
+        <img src="images/1n5402.jpg">
+        <p>1N5402</p>
+    </div>
+    <div class="rectifier-card" onclick="showRectifier('1n5404')">
+        <img src="images/1n5404.jpg">
+        <p>1N5404</p>
+    </div>
+    <div class="rectifier-card" onclick="showRectifier('1n5408')">
+        <img src="images/1n5408.jpg">
+        <p>1N5408</p>
+    </div>
+
+</div>
+
+<!-- DETAILS -->
+<div id="details">
+    <h2 id="title"></h2>
+    <p id="info"></p>
+</div>
+
+<br>
+<a href="diodes.html" class="button">⬅ Back to Diodes</a>
+
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+        <p>Phone:📞7907516323,8301934620</p>
+        <p>Email:📧emaleena7@gmail.com,sandradgfgb.com</p>
+    </div>
+</footer>
+</body>
+</html>

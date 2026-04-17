@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SCHOTTKY</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial;
+    background: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Grid */
+.schottky-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Card */
+.schottky-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.schottky-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image */
+.schottky-card img {
+    width: 100px;
+}
+
+/* Details box */
+#details {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+</style>
+
+<script>
+    window.onload = function () {
+
+    let hash = window.location.hash;
+
+    if (hash) {
+        let type = hash.replace("#", "");
+        showSchottky(type);
+    }
+}
+function showSchottky(type) {
+
+    let title = document.getElementById("title");
+    let info = document.getElementById("info");
+    let box = document.getElementById("details");
+
+    
+
+    if (type === "1n5817") {
+        title.innerHTML = "1N5817";
+        info.innerHTML = "The 1N5817 is a 1A, 20V Schottky barrier diode known for its low forward voltage drop of 0.45V to 0.75V, fast switching speeds, and high surge capability. Designed for low-voltage, high-frequency inverters, freewheeling, and polarity protection, it typically comes in a DO-41 axial package";
+    }
+
+    else if (type === "1n5818") {
+        title.innerHTML = "1N5818";
+        info.innerHTML = "The 1N5818 is a 1A Schottky barrier rectifier designed for high-efficiency power tasks. It features a low maximum forward voltage drop of 0.55V at 1.0A and a peak reverse voltage of 30V. Its key strengths are extremely fast switching and minimal power loss, making it ideal for low-voltage, high-frequency inverters, free-wheeling diodes, and polarity protection in battery-powered devices.";
+    }
+
+    else if (type === "1n5819") {
+        title.innerHTML = "1N5819";
+        info.innerHTML = "The 1N5819 is a 1A Schottky barrier rectifier that offers a higher voltage rating than the 1N5818, with a maximum repetitive peak reverse voltage of 40V. It maintains a 1.0A average rectified forward current but has a slightly higher maximum forward voltage drop of 0.60V at 1A. Like other Schottky diodes, it excels in high-frequency applications due to its negligible switching losses and extremely fast recovery times. It is commonly used in DC-DC converters, free-wheeling circuits, and low-voltage inverters where high efficiency is critical.";
+    }
+
+    else if(type === "bat54"){
+        title.innerHTML = "BAT54";
+        info.innerHTML = "The BAT54 is a popular small-signal Schottky barrier diode typically housed in a surface-mount SOT-23 package. It is designed for ultra-high-speed switching and low-voltage applications, featuring a maximum repetitive peak reverse voltage of 30V and a continuous forward current of 200mA. Its primary advantage is a very low forward voltage drop, typically ranging from 0.24V to 0.4V at lower currents (up to 10mA), though it can reach up to 1V at its full 100mA rated test current.";
+    }
+
+    
+    box.style.display = "block";
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+     
+        <div class="header-container">
+            
+            <!-- Logo + Name -->
+            <img src="logo.png" alt="Logo" class="logo">
+            </div>
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+
+</header>
+
+<h2>SCHOTTKY</h2>
+
+<!-- SCHOTTKY GRID -->
+<div class="schottky-container">
+
+    <div class="schottky-card" onclick="showSchottky('1n5817')">
+        <img src="images/1n5817.jpg">
+        <p>1N5817</p>
+    </div>
+
+    <div class="schottky-card" onclick="showSchottky('1n5818')">
+        <img src="images/1n5818.jpg">
+        <p>1N5818</p>
+    </div>
+
+    <div class="schottky-card" onclick="showSchottky('1n5819')">
+        <img src="images/1n5819.jpg">
+        <p>1N5819</p>
+    </div>
+    <div class="schottky-card" onclick="showSchottky('bat54')">
+        <img src="images/bat54.jpg">
+        <p>BAT54</p>
+    </div>
+    
+
+</div>
+
+<!-- DETAILS -->
+<div id="details">
+    <h2 id="title"></h2>
+    <p id="info"></p>
+</div>
+
+<br>
+<a href="diodes.html" class="button">⬅ Back to Diodes</a>
+
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+        <p>Phone:📞7907516323,8301934620</p>
+        <p>Email:📧emaleena7@gmail.com,sandradgfgb.com</p>
+    </div>
+</footer>
+</body>
+</html>

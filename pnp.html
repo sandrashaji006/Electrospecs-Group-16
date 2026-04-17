@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PNP</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial;
+    background: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Grid */
+.pnp-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Card */
+.pnp-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.pnp-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image */
+.pnp-card img {
+    width: 100px;
+}
+
+/* Details box */
+#details {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+</style>
+
+<script>
+    window.onload = function () {
+
+    let hash = window.location.hash;
+
+    if (hash) {
+        let type = hash.replace("#", "");
+        showPnp(type);
+    }
+}
+function showPnp(type) {
+
+    let title = document.getElementById("title");
+    let info = document.getElementById("info");
+    let box = document.getElementById("details");
+
+    
+
+    if (type === "2n3906") {
+        title.innerHTML = "2N3906";
+        info.innerHTML = "The 2N3906 has a maximum collector-emitter voltage of about 40 V and a collector-base voltage of around 40 V. It can handle a maximum collector current of up to 200 mA, making it suitable for low to moderate current applications. The power dissipation is approximately 625 mW under proper conditions. The DC current gain typically ranges from 100 to 300. The transition frequency is around 250 MHz, allowing good performance in switching applications. The base-emitter voltage is typically about 0.7 V when conducting. It is commonly available in a TO-92 plastic package.";
+    }
+
+    else if (type === "bc558") {
+        title.innerHTML = "BC558";
+        info.innerHTML = "The BC558 has a maximum collector-emitter voltage of about –30 V and a collector-base voltage of around –30 V. It can handle a maximum collector current of up to –100 mA, making it suitable for low-current applications. The power dissipation is approximately 500 mW. The DC current gain typically ranges from 110 to 800, depending on the gain group (A, B, or C variants). The transition frequency is around 150 MHz. The base-emitter voltage is typically about –0.7 V when forward biased. It is usually available in a TO-92 plastic package.";
+    }
+
+    else if (type === "bc327") {
+        title.innerHTML = "BC327";
+        info.innerHTML = "The BC327 has a maximum collector-emitter voltage of about –45 V and a collector-base voltage of around –50 V. It can handle a maximum collector current of up to –800 mA, making it suitable for higher current applications compared to BC558. The power dissipation is approximately 625 mW. The DC current gain typically ranges from 100 to 630, depending on the gain group (–16, –25, –40 variants). The transition frequency is around 100 MHz. The base-emitter voltage is typically about –0.7 V when conducting. It is commonly available in a TO-92 plastic package.";
+    }
+
+    else if(type === "bd140"){
+        title.innerHTML = "BD140";
+        info.innerHTML = "The BD140 has a maximum collector-emitter voltage of about –80 V and a collector-base voltage of around –80 V. It can handle a maximum collector current of up to –1.5 A, making it suitable for moderate power applications. The power dissipation is approximately 12.5 W with proper heat sinking. The DC current gain typically ranges from 40 to 250, depending on operating conditions. The transition frequency is around 100 MHz. The base-emitter voltage is typically about –0.7 V. It is usually available in a TO-126 package, which allows better heat dissipation compared to smaller transistors.";
+    }
+
+    
+    box.style.display = "block";
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+     
+        <div class="header-container">
+            
+            <!-- Logo + Name -->
+            <img src="logo.png" alt="Logo" class="logo">
+            </div>
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+
+</header>
+
+<h2>PNP</h2>
+
+<!-- PNP GRID -->
+<div class="pnp-container">
+
+    <div class="pnp-card" onclick="showPnp('2n3906')">
+        <img src="images/2n3906.jpg">
+        <p>2N3906</p>
+    </div>
+
+    <div class="pnp-card" onclick="showPnp('bc558')">
+        <img src="images/bc558.jpg">
+        <p>BC558</p>
+    </div>
+
+    <div class="pnp-card" onclick="showPnp('bc327')">
+        <img src="images/bc327.jpg">
+        <p>BC327</p>
+    </div>
+    <div class="pnp-card" onclick="showPnp('bd140')">
+        <img src="images/bd140.jpg">
+        <p>bd140</p>
+    </div>
+    
+
+</div>
+
+<!-- DETAILS -->
+<div id="details">
+    <h2 id="title"></h2>
+    <p id="info"></p>
+</div>
+
+<br>
+<a href="transistor.html" class="button">⬅ Back to Transistors</a>
+
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+        <p>Phone:📞7907516323,8301934620</p>
+        <p>Email:📧emaleena7@gmail.com,sandradgfgb.com</p>
+    </div>
+</footer>
+</body>
+</html>

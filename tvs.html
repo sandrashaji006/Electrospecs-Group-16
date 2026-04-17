@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TVS</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial;
+    background: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Grid */
+.tvs-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Card */
+.tvs-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.tvs-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image */
+.tvs-card img {
+    width: 100px;
+}
+
+/* Details box */
+#details {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+</style>
+
+<script>
+    window.onload = function () {
+
+    let hash = window.location.hash;
+
+    if (hash) {
+        let type = hash.replace("#", "");
+        showTvs(type);
+    }
+}
+function showTvs(type) {
+
+    let title = document.getElementById("title");
+    let info = document.getElementById("info");
+    let box = document.getElementById("details");
+
+    
+
+    if (type === "1.5ke6.8a") {
+        title.innerHTML = "1.5KE6.8A";
+        info.innerHTML = "The 1.5KE6.8A is a unidirectional TVS (Transient Voltage Suppressor) diode designed to protect electronic circuits from voltage spikes. It has a nominal Zener (breakdown) voltage of 6.8 V, with a reverse standoff voltage of around 5.8 V, allowing it to remain non-conductive during normal operation. The device can handle a peak pulse power dissipation of 1500 W (1.5 kW) for short transient events (typically 10/1000 µs waveform). Its clamping voltage is approximately 10.5 V, limiting overvoltage to a safe level. The diode features fast response time (in picoseconds) and low leakage current, making it effective for surge protection. It is commonly used in power supplies, communication lines, and automotive circuits, and comes in a DO-201 package.";
+    }
+
+    else if (type === "1.5ke18a") {
+        title.innerHTML = "1.5KE18A";
+        info.innerHTML = "The 1.5KE18A is a unidirectional TVS (Transient Voltage Suppressor) diode designed for protecting circuits against voltage surges and transients. It has a reverse standoff voltage of about 15.3 V, allowing normal operation below this level, and a breakdown voltage typically around 17.1 V to 18.9 V. The diode provides a peak pulse power dissipation of 1500 W (1.5 kW) for a standard 10/1000 µs waveform, ensuring strong surge protection capability. Its maximum clamping voltage is approximately 29.2 V, which limits the voltage seen by sensitive components during spikes. The device features a very fast response time (in picoseconds), low leakage current, and good reliability. It is widely used in power supply lines, automotive electronics, and communication equipment, and is typically available in a DO-201 package.";
+    }
+    box.style.display = "block";
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+     
+        <div class="header-container">
+            
+            <!-- Logo + Name -->
+            <img src="logo.png" alt="Logo" class="logo">
+            </div>
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+
+</header>
+
+<h2>TVS DIODES</h2>
+
+<!-- TVS GRID -->
+<div class="tvs-container">
+
+    <div class="tvs-card" onclick="showTvs('1.5ke6.8a')">
+        <img src="images/1.5ke6.8a.jpg">
+        <p>1.5KE6.8A</p>
+    </div>
+
+    <div class="tvs-card" onclick="showTvs('1.5ke18a')">
+        <img src="images/1.5ke18a.jpg">
+        <p>1.5KE18A</p>
+    </div>
+</div>
+
+<!-- DETAILS -->
+<div id="details">
+    <h2 id="title"></h2>
+    <p id="info"></p>
+</div>
+
+<br>
+<a href="diodes.html" class="button">⬅ Back to Diodes</a>
+
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+        <p>Phone:📞7907516323,8301934620</p>
+        <p>Email:📧emaleena7@gmail.com,sandradgfgb.com</p>
+    </div>
+</footer>
+</body>
+</html>

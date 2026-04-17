@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PROXIMITY SENSOR</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial;
+    background: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Grid */
+.proximity-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Card */
+.proximity-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.proximity-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image */
+.proximity-card img {
+    width: 100px;
+}
+
+/* Details box */
+#details {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+</style>
+
+<script>
+    window.onload = function () {
+
+    let hash = window.location.hash;
+
+    if (hash) {
+        let type = hash.replace("#", "");
+        showProximity(type);
+    }
+}
+function showProximity(type) {
+
+    let title = document.getElementById("title");
+    let info = document.getElementById("info");
+    let box = document.getElementById("details");
+
+    
+
+    if (type === "lj12a3") {
+        title.innerHTML = "LJ12A3";
+        info.innerHTML = "The LJ12A3 inductive proximity sensor is a non-contact metal detection sensor used to sense the presence of conductive materials like iron, steel, and aluminum (limited range). It operates with a DC supply voltage of 6 V to 36 V (commonly 12 V or 24 V) and provides a digital ON/OFF output (NPN or PNP depending on model). The sensing distance is typically around 4 mm to 8 mm. It uses an electromagnetic field to detect metal objects and is widely used in CNC machines, automation systems, and industrial position detection.";
+    }
+
+    else if(type === "ljc18a3") {
+        title.innerHTML = "LJC18A3";
+        info.innerHTML = "The LJC18A3 inductive proximity sensor is a non-contact metal detection sensor used to sense nearby metallic objects (iron, steel, aluminum with reduced range). It operates with a DC supply voltage of 6 V to 36 V, commonly 12 V or 24 V, and provides a digital output (NPN or PNP, normally open or closed versions available). The typical sensing distance is about 5 mm to 10 mm depending on model and target material. It works using an electromagnetic field and is widely used in automation, CNC machines, and industrial object detection systems.";
+    }
+
+    else if (type === "tcrt5000") {
+        title.innerHTML = "TCRT5000";
+        info.innerHTML = "The TCRT5000 reflective IR sensor is an infrared reflective optical sensor used for detecting nearby objects and surface contrast (like line tracking). It operates at a 3 V to 5 V supply and contains an IR LED transmitter and phototransistor receiver in a single package. The detection range is typically 0.2 mm to 15 mm, depending on surface reflectivity. It provides an analog or digital output (depending on module) and is widely used in line-following robots, speed sensing, and object detection applications.";
+    }
+    else if(type === "us1881") {
+        title.innerHTML = "US1881";
+        info.innerHTML = "The US1881 Hall effect sensor is a unipolar Hall-effect switch used for detecting magnetic fields. It operates with a supply voltage of 3.5 V to 24 V and provides a digital output (ON/OFF) depending on the presence of a magnetic field. When a south pole magnetic field is detected above the threshold, the output switches state. It has built-in temperature compensation, low power consumption, and is commonly used in speed detection, position sensing, and contactless switches.";
+    }
+
+    
+    box.style.display = "block";
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+     
+        <div class="header-container">
+            
+            <!-- Logo + Name -->
+            <img src="logo.png" alt="Logo" class="logo">
+            </div>
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+
+</header>
+
+<h2>PROXIMITY SENSORS</h2>
+
+<!-- PROXIMITY SENSOR GRID -->
+<div class="proximity-container">
+
+    <div class="proximity-card" onclick="showProximity('lj12a3')">
+        <img src="images/lj12a3.jpg">
+        <p>LJ12A3</p>
+    </div>
+    <div class="proximity-card" onclick="showProximity('ljc18a3')">
+        <img src="images/ljc18a3.jpg">
+        <p>LJC18A3</p>
+    </div>
+    <div class="proximity-card" onclick="showProximity('tcrt5000')">
+        <img src="images/tcrt5000.jpg">
+        <p>TCRT5000</p>
+    </div>
+    <div class="proximity-card" onclick="showProximity('us1881')">
+        <img src="images/us1881.jpg">
+        <p>US1881</p>
+    </div>
+
+    
+</div>
+
+<!-- DETAILS -->
+<div id="details">
+    <h2 id="title"></h2>
+    <p id="info"></p>
+</div>
+
+<br>
+<a href="components.html" class="button">⬅ Back to Components</a>
+
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+        <p>Phone:📞7907516323,8301934620</p>
+        <p>Email:📧emaleena7@gmail.com,sandradgfgb.com</p>
+    </div>
+</footer>
+</body>
+</html>

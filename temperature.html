@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TEMPERATURE SENSOR</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial;
+    background: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Grid */
+.temperature-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Card */
+.temperature-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.temperature-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image */
+.temperature-card img {
+    width: 100px;
+}
+
+/* Details box */
+#details {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+</style>
+
+<script>
+    window.onload = function () {
+
+    let hash = window.location.hash;
+
+    if (hash) {
+        let type = hash.replace("#", "");
+        showTemperature(type);
+    }
+}
+function showTemperature(type) {
+
+    let title = document.getElementById("title");
+    let info = document.getElementById("info");
+    let box = document.getElementById("details");
+
+    
+
+    if (type === "lm35") {
+        title.innerHTML = "LM35";
+        info.innerHTML = "The LM35 temperature sensor is a precision analog temperature sensor that outputs a voltage linearly proportional to temperature. It operates with a supply voltage from 4 V to 30 V (or 5 V commonly used) and has a sensitivity of 10 mV/°C. The measurement range is typically -55°C to +150°C, with an accuracy of about ±0.5°C at room temperature. It does not require calibration and provides an analog output, making it simple to interface with microcontrollers and ADCs.";
+    }
+
+    else if(type === "tmp117") {
+        title.innerHTML = "TMP117";
+        info.innerHTML = "The TMP117 temperature sensor is a high-precision digital temperature sensor with an I²C interface. It operates from a supply voltage of 1.8 V to 5.5 V and provides an extremely high accuracy of about ±0.1°C (typical) with 0.0078°C resolution. The measurement range is approximately -55°C to +150°C. It has very low power consumption and built-in calibration, making it suitable for medical devices, industrial monitoring, and precision measurement applications.";
+    }
+
+    else if (type === "dht22") {
+        title.innerHTML = "DHT22";
+        info.innerHTML = "The DHT22 temperature and humidity sensor is a digital sensor used to measure temperature and relative humidity. It operates at a 3.3 V to 5 V supply and uses a single-wire digital communication protocol. The temperature range is -40°C to +80°C with an accuracy of about ±0.5°C, while humidity range is 0–100% RH with accuracy around ±2–5% RH. It has a relatively slow sampling rate (about 0.5 Hz, or one reading every 2 seconds) but offers better accuracy than DHT11, making it popular in IoT and weather monitoring projects.";
+    }
+    else if(type === "ds18b20") {
+        title.innerHTML = "DS18B20";
+        info.innerHTML = "The DS18B20 temperature sensor is a digital temperature sensor that uses the 1-Wire communication protocol, allowing multiple sensors to share a single data line. It operates with a supply voltage of 3.0 V to 5.5 V and measures temperatures from -55°C to +125°C with an accuracy of about ±0.5°C (from -10°C to +85°C). It has a selectable resolution from 9 to 12 bits and provides direct digital output, making it easy to interface with microcontrollers for precise temperature monitoring.";
+    }
+    else if(type === "max6675") {
+        title.innerHTML = "MAX6675";
+        info.innerHTML = "The MAX6675 thermocouple-to-digital converter is a digital IC used to interface a K-type thermocouple with microcontrollers. It operates with a supply voltage of 3.0 V to 5.5 V and communicates using the SPI interface. The device measures temperatures from 0°C to 1024°C with a resolution of 0.25°C. It includes built-in cold-junction compensation and outputs a 12-bit digital temperature reading, making it ideal for high-temperature measurement applications like ovens and industrial systems.";
+    }
+
+    
+    box.style.display = "block";
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+     
+        <div class="header-container">
+            
+            <!-- Logo + Name -->
+            <img src="logo.png" alt="Logo" class="logo">
+            </div>
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+
+</header>
+
+<h2>TEMPERATURE SENSORS</h2>
+
+<!-- TEMPERATURE SENSOR GRID -->
+<div class="temperature-container">
+
+    <div class="temperature-card" onclick="showTemperature('lm35')">
+        <img src="images/lm35.jpg">
+        <p>LM35</p>
+    </div>
+    <div class="temperature-card" onclick="showTemperature('tmp117')">
+        <img src="images/tmp117.jpg">
+        <p>TMP117</p>
+    </div>
+    <div class="temperature-card" onclick="showTemperature('dht22')">
+        <img src="images/dht22.jpg">
+        <p>DHT22</p>
+    </div>
+    <div class="temperature-card" onclick="showTemperature('ds18b20')">
+        <img src="images/ds18b20.jpg">
+        <p>DS18B20</p>
+    </div>
+    <div class="temperature-card" onclick="showTemperature('max6675')">
+        <img src="images/max6675.jpg">
+        <p>MAX6675</p>
+    </div>
+
+    
+</div>
+
+<!-- DETAILS -->
+<div id="details">
+    <h2 id="title"></h2>
+    <p id="info"></p>
+</div>
+
+<br>
+<a href="components.html" class="button">⬅ Back to Components</a>
+
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+        <p>Phone:📞7907516323,8301934620</p>
+        <p>Email:📧emaleena7@gmail.com,sandradgfgb.com</p>
+    </div>
+</footer>
+</body>
+</html>

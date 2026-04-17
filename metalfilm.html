@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Metal Film Resistor</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial;
+    background: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Grid */
+.metalfilm-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Card */
+.metalfilm-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.metalfilm-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image */
+.metalfilm-card img {
+    width: 100px;
+}
+
+/* Details box */
+#details {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    display: none;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+
+    transform: scale(0.8);
+    opacity: 0;
+    transition: all 0.35s ease;
+}
+
+/* when active */
+#details.show {
+    display: block;
+    transform: scale(1);
+    opacity: 1;
+}
+</style>
+
+<script>
+function showmetalfilm(type) {
+
+    let title = document.getElementById("title");
+    let info = document.getElementById("info");
+    let box = document.getElementById("details");
+    
+
+    if (type === "axial lead") {
+        title.innerHTML = "Axial-Lead Metal Film Resistors";
+        info.innerHTML = "Axial lead metal film resistors are the most commonly used precision resistors. They are made by depositing a thin metal layer (like nickel-chromium) on a ceramic rod and are known for high accuracy and stability. They are widely used in analog circuits, measurement devices, and audio equipment. Typical specifications include resistance ranges from 1 Ω to 10 MΩ, power ratings from 1/8 W to 2 W, and very tight tolerances of ±0.1% to ±1%, making them much more precise than carbon film resistors.";
+    }
+
+    else if (type === "precision") {
+        title.innerHTML = "Precision Metal Film Resistor";
+        info.innerHTML = "Precision metal film resistors are designed for highly accurate and stable performance in sensitive circuits. They offer extremely low tolerance and very low temperature drift, ensuring consistent behavior over time. These resistors are commonly used in medical devices, instrumentation, and audio processing systems. They typically feature tolerances as low as ±0.01% to ±0.1%, excellent temperature stability, and low noise characteristics. ";
+    }
+
+    else if (type === "high voltage") {
+        title.innerHTML = "High Voltage Metal Film Resistor";
+        info.innerHTML = "High voltage metal film resistors are specially designed to withstand high electrical stress without breakdown. They use improved insulation and longer resistor paths to distribute voltage evenly. These resistors are used in power supplies, X-ray equipment, and industrial electronics. They can handle voltages up to several kilovolts (kV) with stable resistance and low leakage current. ";
+    }
+
+    else if (type === "high power") {
+        title.innerHTML = "High Power Metal Film Resistor";
+        info.innerHTML = "High power metal film resistors are built to handle higher wattage and dissipate more heat compared to standard types. They are physically larger and thermally stable, making them suitable for demanding circuits. They are commonly used in amplifiers, industrial control systems, and power electronics, with power ratings ranging from 1 W to 20 W or more.";
+    }
+    else if (type === "low noise") {
+        title.innerHTML = "Low Noise Metal Film Resistor";
+        info.innerHTML = "Low noise metal film resistors are designed to minimize electrical noise and signal distortion. They are ideal for sensitive analog and audio applications where signal clarity is important. These resistors provide stable performance with very low interference, making them widely used in audio amplifiers, sensors, and precision measurement equipment. ";
+    }
+    else if (type === "general purpose") {
+        title.innerHTML = "General Purpose Metal Film Resistor";
+        info.innerHTML = "General purpose metal film resistors are standard precision resistors used in many electronic circuits. They offer a good balance between cost, accuracy, and stability. With tolerances typically around ±1% to ±5%, they are used in everyday electronics, DIY projects, and commercial devices where moderate precision is required. ";
+    }
+   box.classList.remove("show");
+ 
+    box.style.display = "block";
+
+// trigger animation
+setTimeout(() => {
+    box.classList.add("show");
+}, 10);
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+     
+        <div class="header-container">
+            
+            <!-- Logo + Name -->
+            <img src="logo.jpeg" alt="Logo" class="logo">
+            </div>
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+
+</header>
+
+<h2>Metal Film Resistor</h2>
+
+<!-- METAL FILM GRID -->
+<div class="metalfilm-container">
+
+    <div class="metalfilm-card" onclick="showmetalfilm('axial lead')">
+        <img src="images/1n4728a.jpg">
+        <p>AXIAL LEADED METAL FILM RESISTOR</p>
+    </div>
+
+    <div class="metalfilm-card" onclick="showmetalfilm('precision')">
+        <img src="images/1n4730a.jpg">
+        <p>PRECISION METAL FILM RESISTOR</p>
+    </div>
+
+    <div class="metalfilm-card" onclick="showmetalfilm('high voltage')">
+        <img src="images/1n4732a.jpg">
+        <p>HIGH VOLTAGE METAL FILM RESISTOR</p>
+    </div>
+
+    <div class="metalfilm-card" onclick="showmetalfilm('high power')">
+        <img src="images/1n4732a.jpg">
+        <p>HIGH POWER  METAL FILM RESISTOR</p>
+    </div>
+
+    <div class="metalfilm-card" onclick="showmetalfilm('low noise')">
+        <img src="images/1n4732a.jpg">
+        <p>LOW NOISE CARBON FILM RESISTOR</p>
+    </div>
+
+    <div class="metalfilm-card" onclick="showmetalfilm('general purpose')">
+        <img src="images/1n4732a.jpg">
+        <p>GENERAL PURPOSE METAL FILM RESISTOR</p>
+    </div>
+ </div>    
+<!-- DETAILS -->
+<div id="details">
+    <h2 id="title"></h2>
+    <p id="info"></p>
+</div>
+
+<br>
+<br><br>
+<br>
+<br><br>
+<a href="resistors.html" class="button">⬅ Back to Resistors</a>
+
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+        <p>Phone:📞7837674687,636868276487</p>
+        <p>Email:📧emaleendgjj.com,sandradgfgb.com</p>
+    </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NPN</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial;
+    background: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Grid */
+.npn-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Card */
+.npn-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.npn-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image */
+.npn-card img {
+    width: 100px;
+}
+
+/* Details box */
+#details {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+</style>
+
+<script>
+    window.onload = function () {
+
+    let hash = window.location.hash;
+
+    if (hash) {
+        let type = hash.replace("#", "");
+        showNpn(type);
+    }
+}
+function showNpn(type) {
+
+    let title = document.getElementById("title");
+    let info = document.getElementById("info");
+    let box = document.getElementById("details");
+
+    
+
+    if (type === "2n2222") {
+        title.innerHTML = "2N2222";
+        info.innerHTML = "The 2N2222 is an NPN silicon transistor with a maximum collector-emitter voltage of about 40 V and a collector-base voltage (V<sub>CBO</sub>) of around 75 V. It can handle a maximum collector current of up to 800 mA, making it suitable for moderate current applications. The power dissipation is typically around 500 mW to 625 mW depending on the package and cooling conditions. It has a DC current gain ranging roughly from 75 to 300, depending on operating conditions. The transition frequency is about 250 MHz, which allows it to work in high-speed switching applications. The base-emitter voltage is typically around 0.7 V when conducting. It is commonly available in TO-18 metal can and TO-92 plastic packages.";
+    }
+
+    else if (type === "bc547") {
+        title.innerHTML = "BC547";
+        info.innerHTML = "The BC547 has a maximum collector-emitter voltage of about 45 V and a collector-base voltage of around 50 V. It can handle a maximum collector current of up to 100 mA, making it suitable for low-current applications. The power dissipation is approximately 500 mW. The DC current gain typically ranges from 110 to 800, depending on the gain group. The transition frequency is around 300 MHz, allowing decent high-frequency performance. The base-emitter voltage is typically about 0.7 V when forward biased. It is usually available in a TO-92 plastic package";
+    }
+
+    else if (type === "2n3904") {
+        title.innerHTML = "2N3904";
+        info.innerHTML = "The 2N3904 has a maximum collector-emitter voltage of about 40 V and a collector-base voltage of around 60 V. It can handle a maximum collector current of up to 200 mA, making it ideal for low to moderate current applications. The power dissipation is approximately 625 mW under proper conditions. The DC current gain typically ranges from 100 to 300. The transition frequency is around 300 MHz, allowing good high-speed switching performance. The base-emitter voltage is typically about 0.7 V when conducting. It is commonly available in a TO-92 plastic package.";
+    }
+
+    else if(type === "tip31c"){
+        title.innerHTML = "TIP31C";
+        info.innerHTML = "The TIP31C has a maximum collector-emitter voltage of about 100 V, and a collector-base voltage of around 100 V. It can handle a maximum collector current of up to 3 A, making it suitable for higher current circuits compared to small-signal transistors. The power dissipation is approximately 40 W when properly heat-sinked. The DC current gain typically ranges from 10 to 50, depending on operating conditions. The transition frequency is around 3 MHz, which is lower than small-signal transistors, so it is mainly used for power applications rather than high-frequency circuits. The base-emitter voltage is typically about 0.7 V. It is usually available in a TO-220 package, suitable for mounting on a heat sink.";
+    }
+
+    
+    box.style.display = "block";
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+     
+        <div class="header-container">
+            
+            <!-- Logo + Name -->
+            <img src="logo.png" alt="Logo" class="logo">
+            </div>
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+
+</header>
+
+<h2>NPN</h2>
+
+<!-- SCHOTTKY GRID -->
+<div class="npn-container">
+
+    <div class="npn-card" onclick="showNpn('2n2222')">
+        <img src="images/2n2222.jpg">
+        <p>2N2222</p>
+    </div>
+
+    <div class="npn-card" onclick="showNpn('bc547')">
+        <img src="images/BC547.jpg">
+        <p>BC547</p>
+    </div>
+
+    <div class="npn-card" onclick="showNpn('2n3904')">
+        <img src="images/2n3904.jpg">
+        <p>2N3904</p>
+    </div>
+    <div class="npn-card" onclick="showNpn('tip31c')">
+        <img src="images/tip31c.jpg">
+        <p>TIP31C</p>
+    </div>
+    
+
+</div>
+
+<!-- DETAILS -->
+<div id="details">
+    <h2 id="title"></h2>
+    <p id="info"></p>
+</div>
+
+<br>
+<a href="transistor.html" class="button">⬅ Back to Transistors</a>
+
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+        <p>Phone:📞7907516323,8301934620</p>
+        <p>Email:📧emaleena7@gmail.com,sandradgfgb.com</p>
+    </div>
+</footer>
+</body>
+</html>

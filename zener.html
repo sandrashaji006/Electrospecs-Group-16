@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zener Diodes</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial;
+    background: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Grid */
+.zener-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Card */
+.zener-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.zener-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image */
+.zener-card img {
+    width: 100px;
+}
+
+/* Details box */
+#details {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+</style>
+
+<script>
+window.onload = function () {
+
+    let hash = window.location.hash;
+
+    if (hash) {
+        let type = hash.replace("#", "");
+        showZener(type);
+    }
+}
+
+function showZener(type) {
+
+    let title = document.getElementById("title");
+    let info = document.getElementById("info");
+    let box = document.getElementById("details");
+    
+
+    if (type === "1n4728a") {
+        title.innerHTML = "1N4728A";
+        info.innerHTML = "The 1N4728A is a 1-Watt axial-lead Zener diode designed for voltage regulation, featuring a nominal Zener voltage of 3.3V and ±5% tolerance. It is commonly used for voltage stabilization, with a maximum operating temperature of 200°C and a Zener test current of 76mA";
+    }
+
+    else if (type === "1n4730a") {
+        title.innerHTML = "1N4730A";
+        info.innerHTML = "The 1N4730A is a 1-watt Zener diode with a nominal Zener voltage of 3.9 V. It features a ±5% voltage tolerance, meaning the voltage typically ranges between 3.705 V and 4.095 V. This diode is commonly used for voltage regulation and protection in a DO-41 (DO-204AL) package.";
+    }
+
+    else if (type === "1n4732a") {
+        title.innerHTML = "1N4732A";
+        info.innerHTML = "The 1N4732A is a 1-watt Zener diode with a nominal Zener voltage of 4.7V. It is commonly used for voltage regulation and clamping, featuring a ±5% voltage tolerance and typically operating in a DO-41 package. Its reverse breakdown voltage ensures a stable 4.7V output in circuits.";
+    }
+
+    else if(type === "1n4733a"){
+        title.innerHTML = "1N4733A";
+        info.innerHTML = "The 1N4733A is a 1-watt, 5.1V Zener diode, commonly used for voltage regulation and protection. It features a nominal zener voltage of 5.1V, a typical tolerance of ±5% and comes in a DO-41 glass package. It is widely used in electronic circuits as a stable reference voltage source.";
+    }
+
+    else if(type === "1n4735a"){
+        title.innerHTML = "IN4735A";
+        info.innerHTML = "The 1N4735A is a widely used 1-watt, 6.2V Zener diode, commonly utilized for voltage regulation and protection circuits. Key specs include a nominal Zener voltage of 6.2V with a ±5% tolerance, a 1-watt power rating, and a DO-41 package designed for through-hole mounting";
+    }
+
+    else if(type === "bzx55c3v3"){
+        title.innerHTML = "BZX55C3V3";
+        info.innerHTML = "The BZX55C3V3 is a 0.5W (500mW) Zener diode with a nominal Zener voltage of 3.3V. It is typically used for voltage regulation and clamping, featuring a standard DO-35 (DO-204AH) axial package and a typical ±5% to ±6% tolerance.";
+    }
+
+    else if(type === "bzx55c5v1"){
+        title.innerHTML = "BZX55C5V1";
+        info.innerHTML = "The BZX55C5V1 is a 5.1V, 500mW Zener diode, typically used for voltage regulation in DO-35 packaging. It features a nominal Zener voltage of 5.1v with a ±5% tolerance, typically ranging from 4.8v to 5.4v, a 0.5W power dissipation, and a test current of 5mA.";
+    }
+
+    else if(type === "bzx55c12"){
+        title.innerHTML = "BZX55C12";
+        info.innerHTML = "The BZX55C12 is a 12V (nominal) Zener diode with a 500mW (1/2 W) power dissipation rating, designed for voltage regulation and surge protection. It typically operates with a ±5% voltage tolerance (11.4V to 12.7V range) and comes in a DO-35 axial package";
+    }
+
+    box.style.display = "block";
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+     
+        <div class="header-container">
+            
+            <!-- Logo + Name -->
+            <img src="logo.png" alt="Logo" class="logo">
+            </div>
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+
+</header>
+
+<h2>Zener Diodes</h2>
+
+<!-- ZENER GRID -->
+<div class="zener-container">
+
+    <div class="zener-card" onclick="showZener('1n4728a')">
+        <img src="images/1n4728a.jpg">
+        <p>1N4728A</p>
+    </div>
+
+    <div class="zener-card" onclick="showZener('1n4730a')">
+        <img src="images/1n4730a.jpg">
+        <p>1N4730A</p>
+    </div>
+
+    <div class="zener-card" onclick="showZener('1n4732a')">
+        <img src="images/1n4732a.jpg">
+        <p>1N4732A</p>
+    </div>
+    <div class="zener-card" onclick="showZener('1n4733a')">
+        <img src="images/1n4733a.jpg">
+        <p>1N4733A</p>
+    </div>
+    <div class="zener-card" onclick="showZener('1n4735a')">
+        <img src="images/1n4735a.jpg">
+        <p>1N4735A</p>
+    </div>
+    <div class="zener-card" onclick="showZener('bzx55c3v3')">
+        <img src="images/bzx55c3v3.jpg">
+        <p>BZX55C3V3</p>
+    </div>
+    <div class="zener-card" onclick="showZener('bzx55c5v1')">
+        <img src="images/bzx55c5v1.jpg">
+        <p>BZX55C5V1</p>
+    </div>
+    <div class="zener-card" onclick="showZener('bzx55c12')">
+        <img src="images/bzx55c12.jpg">
+        <p>BZX55C12</p>
+    </div>
+
+</div>
+
+<!-- DETAILS -->
+<div id="details">
+    <h2 id="title"></h2>
+    <p id="info"></p>
+</div>
+
+<br>
+<a href="diodes.html" class="button">⬅ Back to Diodes</a>
+
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+        <p>Phone:📞7907516323,8301934620</p>
+        <p>Email:📧emaleena7@gmail.com,sandradgfgb.com</p>
+    </div>
+</footer>
+</body>
+</html>

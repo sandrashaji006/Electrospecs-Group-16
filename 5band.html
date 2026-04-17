@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="stylesheet" href="styles1.css">
+<meta charset="UTF-8">
+<title>5-Band Resistor Calculator</title>
+
+<style>
+
+/* 🌄 Background */
+body {
+    font-family: Arial;
+    text-align: center;
+    background-color: #f8f8f8; /* FIXED */
+    background-size: cover;
+    background-position: center;
+}
+
+/* ✨ Animation */
+@keyframes riseUp {
+  0% { transform: translateY(50px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.riseup {
+  animation: riseUp 0.8s ease-out;
+}
+
+/* 🧠 Title */
+h1 {
+    color: white;
+    margin-top: 50px;
+}
+.title-black {
+    color: #000000;
+}
+
+/* 🎛 Controls */
+select, button {
+    margin: 5px;
+    padding: 8px 12px;
+    font-size: 16px;
+    color: #0f0f0f;
+}
+
+/* 📊 Result */
+#result {
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+/* 🔲 Resistor */
+.resistor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+/* 🧊 Body */
+.resistor-body {
+    display: flex;
+    align-items: center;
+    padding: 10px 25px;
+    border-radius: 25px;
+    background: linear-gradient(145deg, #d6d6d6, #ffffff);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* 🎨 Bands */
+.band {
+    width: 16px;
+    height: 70px;
+    margin: 0 4px;
+    border-radius: 5px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+}
+
+/* ⚡ Wires */
+.wire {
+    width: 60px;
+    height: 4px;
+    background: silver;
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    background: #222;
+    color: white;
+    padding: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="header-container">
+        <img src="logo.jpeg" alt="Logo" class="logo">
+    </div>
+
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+</header>
+
+<h1 class="riseup title-black">5-BAND RESISTOR CALCULATOR</h1>
+<hr class="riseup">
+
+<br>
+
+<div class="riseup delay3">
+
+    Band 1: <select id="b1"></select>
+    Band 2: <select id="b2"></select>
+    Band 3: <select id="b3"></select>
+    Multiplier: <select id="multiplier"></select>
+    Tolerance: <select id="tolerance"></select>
+
+    <br><br>
+
+    <button class="riseup delay4" onclick="calculate5()">Calculate Resistance</button>
+
+</div>
+
+<!-- RESISTOR -->
+<div class="resistor">
+    <div class="wire"></div>
+
+    <div class="resistor-body">
+        <div id="band1" class="band"></div>
+        <div id="band2" class="band"></div>
+        <div id="band3" class="band"></div>
+        <div id="band4" class="band"></div>
+        <div id="band5" class="band"></div>
+    </div>
+
+    <div class="wire"></div>
+</div>
+
+<div id="result" class="riseup delay5"></div>
+
+<!-- FOOTER (FIXED LOCATION) -->
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+        <p>Phone: 📞7837674687,6368682767</p>
+        <p>Email: 📧emaleendgjj.com,sandradgfgb.com</p>
+    </div>
+</footer>
+
+<script>
+
+const colors = {
+    Black:0, Brown:1, Red:2, Orange:3, Yellow:4,
+    Green:5, Blue:6, Violet:7, Grey:8, White:9
+};
+
+const multipliers = {
+    Black:1, Brown:10, Red:100, Orange:1000,
+    Yellow:10000, Green:100000, Blue:1000000,
+    Gold:0.1, Silver:0.01
+};
+
+const tolerances = {
+    Gold:"±5%", Silver:"±10%", Brown:"±1%", Red:"±2%"
+};
+
+function populateDropdown(id, obj){
+    const select = document.getElementById(id);
+
+    let def = document.createElement("option");
+    def.text = "Select";
+    def.disabled = true;
+    def.selected = true;
+    select.appendChild(def);
+
+    for(let key in obj){
+        let opt = document.createElement("option");
+        opt.value = key;
+        opt.text = key;
+        select.appendChild(opt);
+    }
+}
+
+window.onload = function(){
+    populateDropdown("b1", colors);
+    populateDropdown("b2", colors);
+    populateDropdown("b3", colors);
+    populateDropdown("multiplier", multipliers);
+    populateDropdown("tolerance", tolerances);
+};
+
+function formatRes(v){
+    if(v >= 1000000) return (v/1000000) + " MΩ";
+    if(v >= 1000) return (v/1000) + " kΩ";
+    return v + " Ω";
+}
+
+function calculate5(){
+
+    let b1 = document.getElementById("b1").value;
+    let b2 = document.getElementById("b2").value;
+    let b3 = document.getElementById("b3").value;
+    let mult = document.getElementById("multiplier").value;
+    let tol = document.getElementById("tolerance").value;
+
+    if(!b1 || !b2 || !b3 || !mult || !tol){
+        document.getElementById("result").innerText = "Please select all bands!";
+        return;
+    }
+
+    let value = ((colors[b1]*100) + (colors[b2]*10) + colors[b3]) * multipliers[mult];
+
+    document.getElementById("result").innerText =
+        "Resistance: " + formatRes(value) + " " + tolerances[tol];
+
+    document.getElementById("band1").style.background = b1.toLowerCase();
+    document.getElementById("band2").style.background = b2.toLowerCase();
+    document.getElementById("band3").style.background = b3.toLowerCase();
+    document.getElementById("band4").style.background = mult.toLowerCase();
+    document.getElementById("band5").style.background = tol.toLowerCase();
+}
+
+</script>
+
+</body>
+</html>

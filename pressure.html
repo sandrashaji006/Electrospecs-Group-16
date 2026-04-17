@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRESSURE SENSOR</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial;
+    background: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Grid */
+.pressure-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Card */
+.pressure-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.pressure-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image */
+.pressure-card img {
+    width: 100px;
+}
+
+/* Details box */
+#details {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+</style>
+
+<script>
+    window.onload = function () {
+
+    let hash = window.location.hash;
+
+    if (hash) {
+        let type = hash.replace("#", "");
+        showPressure(type);
+    }
+}
+function showPressure(type) {
+
+    let title = document.getElementById("title");
+    let info = document.getElementById("info");
+    let box = document.getElementById("details");
+
+    
+
+    if (type === "bmp280") {
+        title.innerHTML = "BMP280";
+        info.innerHTML = "The BMP280 pressure sensor is a digital sensor used to measure barometric pressure and temperature. It operates with a supply voltage of 1.71 V to 3.6 V and communicates via I²C or SPI interface. The pressure measurement range is approximately 300 hPa to 1100 hPa, with high accuracy suitable for altitude estimation. It also measures temperature in the range of about -40°C to +85°C. The sensor is low power, highly precise, and widely used in weather stations, drones, and altitude tracking applications.";
+    }
+
+    else if(type === "hk1100c") {
+        title.innerHTML = "HK1100C";
+        info.innerHTML = "The HK1100C pressure sensor is a low-cost pressure sensor module commonly used for basic barometric and altitude-related measurements. It typically operates with a supply voltage of 3.3 V to 5 V and provides an analog voltage output proportional to pressure. The measurable pressure range is generally around low to mid atmospheric pressure range (depends on module variant). It has moderate accuracy and is mainly used in hobby electronics, air pressure detection, and simple environmental monitoring projects.";
+    }
+
+    else if(type === "mpx7002") {
+        title.innerHTML = "MPX7002";
+        info.innerHTML = "The MPX7002 pressure sensor is a silicon piezoresistive differential/low-pressure sensor designed for measuring air pressure and airflow. It operates with a supply voltage of 5 V DC and provides an analog output voltage proportional to pressure. The measurable pressure range is approximately −2 kPa to +2 kPa, making it suitable for low-pressure applications. It offers good sensitivity, temperature compensation, and is commonly used in medical devices, airflow measurement, and HVAC systems.";
+    }
+    else if(type === "fsr402") {
+        title.innerHTML = "FSR402";
+        info.innerHTML = "The FSR402 force sensing resistor is a flexible force sensor whose resistance decreases when pressure or force is applied. It operates in a 0 to ~10 kg (or more depending on area) force range and provides an analog resistance output (not linear). In no-load condition, it has very high resistance (mega-ohms), which drops significantly under pressure. It works in a simple voltage divider circuit and is commonly used in touch sensing, pressure detection, and wearable electronics.";
+    }
+    
+    box.style.display = "block";
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+     
+        <div class="header-container">
+            
+            <!-- Logo + Name -->
+            <img src="logo.png" alt="Logo" class="logo">
+            </div>
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+
+</header>
+
+<h2>PRESSURE SENSORS</h2>
+
+<!-- PRESSURE SENSOR GRID -->
+<div class="pressure-container">
+
+    <div class="pressure-card" onclick="showPressure('bmp280')">
+        <img src="images/bmp280.jpg">
+        <p>BMP280</p>
+    </div>
+    <div class="pressure-card" onclick="showPressure('hk1100c')">
+        <img src="images/hk1100c.jpg">
+        <p>HK1100C</p>
+    </div>
+    <div class="pressure-card" onclick="showPressure('mpx7002')">
+        <img src="images/mpx7002.jpg">
+        <p>MPX7002</p>
+    </div>
+    <div class="pressure-card" onclick="showPressure('fsr402')">
+        <img src="images/fsr402.jpg">
+        <p>FSR402</p>
+    </div>
+    
+</div>
+
+<!-- DETAILS -->
+<div id="details">
+    <h2 id="title"></h2>
+    <p id="info"></p>
+</div>
+
+<br>
+<a href="components.html" class="button">⬅ Back to Components</a>
+
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+       <p>Phone:📞7907516323,8301934620</p>
+        <p>Email:📧emaleena7@gmail.com,sandradgfgb.com</p>
+    </div>
+</footer>
+</body>
+</html>

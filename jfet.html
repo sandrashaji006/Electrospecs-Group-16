@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NPN</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+body {
+    font-family: Arial;
+    background: #f8f8f8;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Grid */
+.jfet-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    width: 90%;
+    margin: 40px auto;
+}
+
+/* Card */
+.jfet-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    transition: 0.3s;
+}
+
+.jfet-card:hover {
+    transform: scale(1.05);
+}
+
+/* Image */
+.jfet-card img {
+    width: 100px;
+}
+
+/* Details box */
+#details {
+    width: 80%;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    display: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+</style>
+
+<script>
+    window.onload = function () {
+
+    let hash = window.location.hash;
+
+    if (hash) {
+        let type = hash.replace("#", "");
+        showJfet(type);
+    }
+}
+function showJfet(type) {
+
+    let title = document.getElementById("title");
+    let info = document.getElementById("info");
+    let box = document.getElementById("details");
+
+    
+
+    if (type === "2n5457") {
+        title.innerHTML = "2N5457";
+        info.innerHTML = "The 2N5457 JFET is a general-purpose N-channel junction field-effect transistor (JFET), commonly used in low-noise amplifiers and analog switching circuits.It has a maximum drain-source voltage of about 25 V and a gate-source voltage rating of around –25 V. It operates with a drain current typically ranging from 1 mA to 5 mA (device dependent). The pinch-off voltage usually lies between –0.5 V and –6 V, which controls its conduction. The power dissipation is approximately 350 mW. Being a JFET, it has very high input impedance and low noise, making it suitable for audio and signal processing applications. It is commonly available in a TO-92 package.";
+    }
+
+    else if (type === "bf245") {
+        title.innerHTML = "BF245";
+        info.innerHTML = "The BF245 JFET is a general-purpose N-channel junction field-effect transistor (JFET), widely used in low-noise amplifiers and RF (radio frequency) applications.It has a maximum drain-source voltage of about 30 V and a gate-source voltage rating of around –30 V. It operates with a drain current typically ranging from 2 mA to 25 mA, depending on the variant (BF245A, BF245B, BF245C). The pinch-off voltage generally lies between –0.5 V and –8 V, varying by type. The power dissipation is approximately 300 mW. It offers high input impedance and low noise, making it suitable for RF amplifiers, mixers, and signal processing circuits. It is commonly available in a TO-92 package.";
+    }
+
+    else if (type === "j111") {
+        title.innerHTML = "J111";
+        info.innerHTML = "The J111 JFET is an N-channel junction field-effect transistor designed mainly for switching and analog applications.It has a maximum drain-source voltage of about 35 V and a gate-source voltage rating of around –35 V. It operates with a relatively high drain current typically in the range of 20 mA to 50 mA, making it suitable for switching applications compared to low-current JFETs. The pinch-off voltage usually lies between –3 V and –10 V. The power dissipation is approximately 350 mW. It offers high input impedance and fast switching characteristics. It is commonly available in a TO-92 package.";
+    }
+
+    
+    box.style.display = "block";
+}
+</script>
+
+</head>
+
+<body>
+    <header>
+     
+        <div class="header-container">
+            
+            <!-- Logo + Name -->
+            <img src="logo.png" alt="Logo" class="logo">
+            </div>
+    <div class="header-left">
+        <h1>ELECTROSPECS</h1>
+    </div>
+
+    <div class="scrolling-banner">
+        <p>Welcome to ElectroSpecs | Explore Electronics Components | Learn & Build 🚀</p>
+    </div>
+
+</header>
+
+<h2>JFET</h2>
+
+<!-- JFET GRID -->
+<div class="jfet-container">
+
+    <div class="jfet-card" onclick="showJfet('2n5457')">
+        <img src="images/2n5457.jpg">
+        <p>2N5457</p>
+    </div>
+
+    <div class="jfet-card" onclick="showJfet('bf245')">
+        <img src="images/bf245.jpg">
+        <p>BF245</p>
+    </div>
+
+    <div class="jfet-card" onclick="showJfet('j111')">
+        <img src="images/j111.jpg">
+        <p>J111</p>
+    </div>
+    
+</div>
+
+<!-- DETAILS -->
+<div id="details">
+    <h2 id="title"></h2>
+    <p id="info"></p>
+</div>
+
+<br>
+<a href="transistor.html" class="button">⬅ Back to Transistors</a>
+
+<footer>
+    <div class="footer-container">
+        <p>Contact Us:</p>
+        <p>Phone:📞7907516323,8301934620</p>
+        <p>Email:📧emaleena7@gmail.com,sandradgfgb.com</p>
+    </div>
+</footer>
+</body>
+</html>
